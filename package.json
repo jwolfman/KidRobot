@@ -1,0 +1,23 @@
+{
+  "name": "kidrobot",
+  "version": "1.0.0",
+  "description": "A Mutants and Masterminds dice rolling bot.",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwolfman/KidRobot.git"
+  },
+  "author": "Josh Wolfman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwolfman/KidRobot/issues"
+  },
+  "homepage": "https://github.com/jwolfman/KidRobot#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "winston": "^3.2.1"
+  }
+}
