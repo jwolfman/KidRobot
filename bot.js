@@ -25,10 +25,10 @@ bot.on('ready', function (evt) {
 bot.on('message', function(message){
 //function (user, userID, channelID, message, evt){
     if (message.content.startsWith(prefix)&&!message.author.bot){
-        var args = message.substring(1).split(/ +/);
-        var cmd = args[0];
+        var args = message.content.slice(prefix.length).split(/ +/);
+        var cmd = args.shift();
 
-        args = args.splice(1);
+        //args = args.splice(1);
         switch(cmd) {
             case 'toughness':
                 if(args.length!=2){
@@ -36,11 +36,11 @@ bot.on('message', function(message){
                 }
                 var roll=Math.floor(Math.random()*20+1);
                 var bonus=parseInt(args[0]);
-                if(bonus=NaN){
+                if(bonus==NaN){
                     return message.channel.send("First (bonus) argument must be an integer,"+message.author+"!");
                 }
                 var rank=parseInt(args[1]);
-                if(rank=NaN){
+                if(rank==NaN){
                     return message.channel.send("Second (effect rank) argument must be an integer,"+message.author+"!");
                 }
                 var deg=Math.floor((roll+bonus-15-rank)/5);
@@ -60,11 +60,11 @@ bot.on('message', function(message){
                 }
                 var roll=Math.floor(Math.random()*20+1);
                 var bonus=parseInt(args[0]);
-                if(bonus=NaN){
+                if(bonus==NaN){
                     return message.channel.send("First (bonus) argument must be an integer,"+message.author+"!");
                 }
                 var DC=parseInt(args[1]);
-                if(DC=NaN){
+                if(DC==NaN){
                     return message.channel.send("Second (effect rank) argument must be an integer,"+message.author+"!");
                 }
                 var deg=Math.floor((roll+bonus-DC)/5);
