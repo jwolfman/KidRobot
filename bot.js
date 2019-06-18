@@ -1,6 +1,7 @@
 /**
  * Created by joshwolfman on 6/14/19.
  */
+const port=process.env.POR||8080;
 const Discord=require('discord.js');
 //const auth = require('./auth.json');
 const config=require('./config.json');
