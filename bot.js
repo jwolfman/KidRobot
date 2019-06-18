@@ -2,7 +2,7 @@
  * Created by joshwolfman on 6/14/19.
  */
 const Discord=require('discord.js');
-const auth = require('./auth.json');
+//const auth = require('./auth.json');
 const config=require('./config.json');
 const fs=require('fs');
 const prefix=config.prefix;
@@ -76,4 +76,4 @@ bot.on('message', function(message){
             message.reply('there was an error trying to execute that command!');
         }    }
 });
-bot.login(auth.token);
+bot.login(bot.token);
