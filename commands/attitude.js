@@ -2,8 +2,9 @@
  * Created by joshwolfman on 6/17/19.
  */
 module.exports={
-    name:'',
-    description:'',
+    name:'attitude',
+    description:'Make a persuasion roll to improve a target\'s attitude towards you.',
+    usage:'[bonus]',
     execute:function(message,args){
         var response=message.author;
         if(args.length!=1){

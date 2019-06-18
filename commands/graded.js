@@ -2,8 +2,9 @@
  * Created by joshwolfman on 6/17/19.
  */
 module.exports={
-    name:'',
-    description:'',
+    name:'graded',
+    description:'Make a roll for a general graded check against a set DC',
+    usage:'[bonus] [DC]',
     execute:function(message,args){
         var response=message.author;
         if(args.length!=2){

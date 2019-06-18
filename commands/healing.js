@@ -2,8 +2,9 @@
  * Created by joshwolfman on 6/17/19.
  */
 module.exports={
-    name:'',
-    description:'',
+    name:'healing',
+    description:'Make a roll to heal a target of bruises.',
+    usage:'[bonus]',
     execute:function(message,args){
         var response=message.author;
         if(args.length!=1){

@@ -4,6 +4,7 @@
 module.exports={
     name:'toughness',
     description:'Make a toughness roll based on a bonus and the ranks of the damage effect',
+    usage:'[bonus] [ranks]',
     execute:function(message, args){
         var response=message.author;
         if(args.length!=2){

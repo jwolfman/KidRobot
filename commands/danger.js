@@ -2,8 +2,9 @@
  * Created by joshwolfman on 6/17/19.
  */
 module.exports={
-    name:'',
-    description:'',
+    name:'danger',
+    description:'Make a perception check for danger sense to avoid being surprised.',
+    usage:'[bonus]',
     execute:function(message,args){
         var response=message.author;
         if(args.length!=1){

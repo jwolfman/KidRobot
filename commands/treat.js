@@ -2,8 +2,9 @@
  * Created by joshwolfman on 6/17/19.
  */
 module.exports={
-    name:'',
-    description:'',
+    name:'treat',
+    description:'Make a treatment roll to give a bonus to rolls against disease and poison.',
+    usage:'[bonus]',
     execute:function(message,args){
         var response=message.author;
         if(args.length!=1){
