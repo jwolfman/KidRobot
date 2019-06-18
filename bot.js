@@ -18,7 +18,6 @@ const bot = new Discord.Client({
     token: process.env.token,
     autorun: true
 });
-console.log(process.env.token);
 bot.commands=new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for (var file of commandFiles) {
@@ -77,4 +76,4 @@ bot.on('message', function(message){
             message.reply('there was an error trying to execute that command!');
         }    }
 });
-bot.login(bot.token);
+bot.login(process.env.token);
