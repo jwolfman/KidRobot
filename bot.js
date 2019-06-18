@@ -18,6 +18,7 @@ const bot = new Discord.Client({
     token: process.env.token,
     autorun: true
 });
+console.log(bot.token);
 bot.commands=new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for (var file of commandFiles) {
