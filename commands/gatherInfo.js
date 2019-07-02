@@ -44,7 +44,7 @@ module.exports={
                     break;
             }
         }else{
-            response+=deg+" degrees of failure!";
+            response+=-1*deg+" degrees of failure!";
             if(deg<-1){
                 response+=" You might have been found out!";
             }

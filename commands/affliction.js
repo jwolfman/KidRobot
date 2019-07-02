@@ -4,6 +4,7 @@
 module.exports={
     name:'affliction',
     description:'Make a roll to resist an affliction.',
+    aliases:['aff'],
     usage:'[bonus] [DC]',
     execute:function(message,args){
         var response=message.author;
@@ -34,7 +35,7 @@ module.exports={
         if(deg>=0){
             response+=(deg+1)+" degrees of success! No effect!";
         }else{
-            response+=deg+" degrees of failure!";
+            response+=-1*deg+" degrees of failure!";
         }
         return message.channel.send(response);
     }

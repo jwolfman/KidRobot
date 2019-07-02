@@ -35,7 +35,7 @@ module.exports={
                 response+=" That's a **+2** to the patient's roll!";
             }
         }else{
-            response+=deg+" degrees of failure!";
+            response+=-1*deg+" degrees of failure!";
         }
         return message.channel.send(response);
     }

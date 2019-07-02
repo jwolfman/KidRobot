@@ -1,9 +1,10 @@
 /**
- * Created by joshwolfman on 6/17/19.
+ * Created by joshwolfman on 7/2/19.
  */
 module.exports={
-    name:'graded',
-    description:'Make a roll for a general graded check against a set DC',
+    name:'multiattack',
+    description:'Make a roll for a multiattack check against a set DC',
+    aliases:['mult'],
     usage:'[bonus] [DC]',
     execute:function(message,args){
         var response=message.author;
@@ -33,8 +34,15 @@ module.exports={
         }
         if(deg>=0){
             response+=(deg+1)+" degrees of success!";
+            if(deg+1==2){
+                response+=" That's a hit and the effect gets +2!";
+            }else if(deg+1>2){
+                response+=" That's a hit and the effect gets +5!";
+            }else{
+                response+=" That's a hit!";
+            }
         }else{
-            response+=-1*deg+" degrees of failure!";
+            response+=-1*deg+" degrees of failure! That misses!";
         }
         return message.channel.send(response);
     }

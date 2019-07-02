@@ -34,7 +34,7 @@ module.exports={
             }
             response+="!";
         }else{
-            response+=deg+" degrees of failure! That means you can't act!";
+            response+=-1*deg+" degrees of failure! That means you can't act!";
         }
         return message.channel.send(response);
     }

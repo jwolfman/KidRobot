@@ -4,6 +4,7 @@
 module.exports={
     name:'healing',
     description:'Make a roll to heal a target of bruises.',
+    aliases:['heal'],
     usage:'[bonus]',
     execute:function(message,args){
         var response=message.author;
@@ -30,7 +31,7 @@ module.exports={
         if(deg>=0){
             response+=(deg+1)+" degrees of success! Which heals **"+(deg+1)+" damage conditions** starting from the worst!";
         }else{
-            response+=deg+" degrees of failure! Which heals nothing!";
+            response+=-1*deg+" degrees of failure! Which heals nothing!";
         }
         return message.channel.send(response);
     }

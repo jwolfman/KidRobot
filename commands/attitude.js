@@ -31,7 +31,7 @@ module.exports={
             var change=Math.floor(deg/2)+1;
             response+=(deg+1)+" degrees of success! That's "+change+" steps!";
         }else{
-            response+=deg+" degrees of failure!";
+            response+=-1*deg+" degrees of failure!";
             if(deg<=2){
                 response+=" That worsens their attitude by a step!";
             }

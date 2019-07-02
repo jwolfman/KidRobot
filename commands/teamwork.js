@@ -4,6 +4,7 @@
 module.exports={
     name:'teamwork',
     description:'Make a roll to aid another via a teamwork check.',
+    aliases:['team'],
     usage:'[bonus]',
     execute:function(message,args){
         var response=message.author;
@@ -35,7 +36,7 @@ module.exports={
                 response+=" That's a **+2** to the leader's roll!";
             }
         }else{
-            response+=deg+" degrees of failure!";
+            response+=-1*deg+" degrees of failure!";
             if(deg<=-2){
                 response+=" That's a **-2** to the leader's roll!";
             }else{

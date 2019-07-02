@@ -4,6 +4,7 @@
 module.exports={
     name:'toughness',
     description:'Make a toughness roll based on a bonus and the ranks of the damage effect',
+    aliases:['tough'],
     usage:'[bonus] [ranks]',
     execute:function(message, args){
         var response=message.author;
@@ -34,7 +35,7 @@ module.exports={
         if(deg>=0){
             response+=(deg+1)+" degrees of success! No effect!";
         }else{
-            response+=deg+" degrees of failure!";
+            response+=-1*deg+" degrees of failure!";
             switch(deg){
                 case -1:
                     response+=" That's a **Bruise**!";
