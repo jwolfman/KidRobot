@@ -5,7 +5,7 @@ module.exports={
     name:'multiattack',
     description:'Make a roll for a multiattack check against a set DC',
     aliases:['mult','multi'],
-    usage:'[bonus] [DC]',
+    usage:'[bonus] [rank]',
     execute:function(message,args){
         var response=message.author;
         if(args.length!=2){
@@ -21,9 +21,9 @@ module.exports={
         if(bonus==NaN){
             return message.channel.send("First (bonus) argument must be an integer,"+message.author+"!");
         }
-        var DC=parseInt(args[1]);
-        response+=" against a DC of  "+DC+" for ";
-        if(DC==NaN){
+        var rank=parseInt(args[1]);
+        response+=" against a DC of  "+rank+" for ";
+        if(rank==NaN){
             return message.channel.send("Second (effect rank) argument must be an integer,"+message.author+"!");
         }
         var deg;
@@ -41,9 +41,9 @@ module.exports={
             }else{
                 response+=" That's a hit!";
             }
-        }/*else{
+        }else{
             response+=(-1*deg)+" degrees of failure! That misses!";
-        }*/
+        }
         return message.channel.send(response);
     }
 }
