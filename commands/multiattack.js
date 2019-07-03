@@ -13,7 +13,7 @@ module.exports={
         }
         var roll=Math.floor(Math.random()*20+1);
         response+=" rolled "+roll;
-        /*if(roll==20){
+        if(roll==20){
             response+=" to crit";
         }
         var bonus=parseInt(args[0]);
@@ -32,7 +32,7 @@ module.exports={
         }else {
             deg = Math.floor((roll + bonus - 15 - rank) / 5);
         }
-        if(deg>=0){
+        /*if(deg>=0){
             response+=(deg+1)+" degrees of success!";
             if(deg+1==2){
                 response+=" That's a hit and the effect gets +2!";
