@@ -32,7 +32,7 @@ module.exports={
         }else {
             deg = Math.floor((roll + bonus - 15 - rank) / 5);
         }
-        /*if(deg>=0){
+        if(deg>=0){
             response+=(deg+1)+" degrees of success!";
             if(deg+1==2){
                 response+=" That's a hit and the effect gets +2!";
@@ -41,7 +41,7 @@ module.exports={
             }else{
                 response+=" That's a hit!";
             }
-        }else{
+        }/*else{
             response+=(-1*deg)+" degrees of failure! That misses!";
         }*/
         return message.channel.send(response);
