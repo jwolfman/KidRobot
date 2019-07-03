@@ -4,7 +4,7 @@
 module.exports={
     name:'multiattack',
     description:'Make a roll for a multiattack check against a set DC',
-    aliases:['mult'],
+    aliases:['mult','multi'],
     usage:'[bonus] [DC]',
     execute:function(message,args){
         var response=message.author;
@@ -42,7 +42,7 @@ module.exports={
                 response+=" That's a hit!";
             }
         }else{
-            response+=-1*deg+" degrees of failure! That misses!";
+            response+=(-1*deg)+" degrees of failure! That misses!";
         }
         return message.channel.send(response);
     }
