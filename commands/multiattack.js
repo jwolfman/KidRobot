@@ -22,15 +22,15 @@ module.exports={
             return message.channel.send("First (bonus) argument must be an integer,"+message.author+"!");
         }
         var rank=parseInt(args[1]);
-        response+=" against a DC of  "+rank+" for ";
+        response+=" against a defense rank of  "+rank+" for ";
         if(rank==NaN){
             return message.channel.send("Second (effect rank) argument must be an integer,"+message.author+"!");
         }
         var deg;
         if(roll==20){
-            deg = Math.floor((roll + bonus+5 - 15 - rank) / 5);
+            deg = Math.floor((roll + bonus+5 - 10 - rank) / 5);
         }else {
-            deg = Math.floor((roll + bonus - 15 - rank) / 5);
+            deg = Math.floor((roll + bonus - 10 - rank) / 5);
         }
         if(deg>=0){
             response+=(deg+1)+" degrees of success!";
