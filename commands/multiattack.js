@@ -8,7 +8,7 @@ module.exports={
     usage:'[bonus] [DC]',
     execute:function(message,args){
         var response=message.author;
-        if(args.length!=2){
+        /*if(args.length!=2){
             return message.channel.send("Command needs a bonus and DC as input,"+message.author+"!");
         }
         var roll=Math.floor(Math.random()*20+1);
@@ -43,7 +43,7 @@ module.exports={
             }
         }else{
             response+=(-1*deg)+" degrees of failure! That misses!";
-        }
+        }*/
         return message.channel.send(response);
     }
 }
