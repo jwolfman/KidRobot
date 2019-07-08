@@ -13,12 +13,12 @@ module.exports={
         }
         var roll=Math.floor(Math.random()*20+1);
         var crit=(roll==20);
-        if(roll<11){
-            roll+=10;
-        }
         response+=" rolled "+roll;
         if(crit){
             response+=" to crit";
+        }
+        if(roll<11){
+            roll+=10;
         }
         var bonus=parseInt(args[0]);
         response+=" with a bonus of "+bonus;
