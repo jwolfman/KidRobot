@@ -3,7 +3,6 @@
  */
 function read(args){
     var temp=eval(args);
-    console.log(temp);
     if(temp===undefined){
         return 0;
     }
@@ -21,7 +20,7 @@ function read(args){
         for(var c=0;c<loops;c++) {
             response+="\n";
             var roll = Math.floor(Math.random() * 20 + 1);
-            response += " rolled " + roll;
+            response += "Rolled " + roll;
             if (roll == 20) {
                 response += " to crit";
             }
