@@ -1,6 +1,7 @@
 /**
  * Created by joshwolfman on 6/14/19.
  */
+require('read.js');
 const Discord=require('discord.js');
 //const auth = require('./auth.json');
 const config=require('./config.json');
