@@ -1,6 +1,7 @@
 /**
  * Created by joshwolfman on 6/17/19.
  */
+_require('../read.js');
 module.exports={
     name:'affliction',
     description:'Make a roll to resist an affliction.',
