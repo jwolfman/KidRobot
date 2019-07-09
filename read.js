@@ -3,6 +3,7 @@
  */
 function read(args){
     var temp=eval(args);
+    console.log(temp);
     if(temp===undefined){
         return 0;
     }
