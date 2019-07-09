@@ -17,11 +17,14 @@ module.exports={
             response+=" to crit";
         }
         var bonus=eval(args[0]);
+        if(bonus===undefined){
+            bonus=0;
+        }
         response+=" with a bonus of "+bonus;
         if(bonus==NaN){
             return message.channel.send("First (bonus) argument must be an integer,"+message.author+"!");
         }
-        var rank=eval(args[1]);
+        var rank=read(args[1]);
         response+=" against a rank "+rank+" effect for ";
         if(rank==NaN){
             return message.channel.send("Second (effect rank) argument must be an integer,"+message.author+"!");
