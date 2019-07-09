@@ -1,7 +1,14 @@
 /**
  * Created by joshwolfman on 6/17/19.
  */
-module.exports={
+function read(args){
+    var temp=eval(args);
+    console.log(temp);
+    if(temp===undefined){
+        return 0;
+    }
+    return temp;
+}module.exports={
     name:'graded',
     description:'Make a roll for a general graded check against a set DC',
     usage:'[bonus] [DC]',
@@ -15,12 +22,12 @@ module.exports={
         if(roll==20){
             response+=" to crit";
         }
-        var bonus=eval(args[0]);
+        var bonus=read(args[0]);
         response+=" with a bonus of "+bonus;
         if(bonus==NaN){
             return message.channel.send("First (bonus) argument must be an integer,"+message.author+"!");
         }
-        var DC=eval(args[1]);
+        var DC=read(args[1]);
         response+=" against a DC of  "+DC+" for ";
         if(DC==NaN){
             return message.channel.send("Second (effect rank) argument must be an integer,"+message.author+"!");

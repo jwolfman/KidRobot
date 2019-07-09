@@ -1,21 +1,25 @@
 /**
  * Created by joshwolfman on 6/17/19.
  */
-module.exports={
+function read(args){
+    var temp=eval(args);
+    console.log(temp);
+    if(temp===undefined){
+        return 0;
+    }
+    return temp;
+}module.exports={
     name:'attitude',
     description:'Make a persuasion roll to improve a target\'s attitude towards you.',
     usage:'[bonus]',
     execute:function(message,args){
         var response=message.author;
-        if(args.length!=1){
-            return message.channel.send("Command needs a bonus as input,"+message.author+"!");
-        }
         var roll=Math.floor(Math.random()*20+1);
         response+=" rolled "+roll;
         if(roll==20){
             response+=" to crit";
         }
-        var bonus=eval(args[0]);
+        var bonus=read(args[0]);
         response+=" with a bonus of "+bonus;
         if(bonus==NaN){
             return message.channel.send("First (bonus) argument must be an integer,"+message.author+"!");
