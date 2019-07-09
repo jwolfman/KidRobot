@@ -1,7 +1,14 @@
 /**
  * Created by joshwolfman on 6/17/19.
  */
-module.exports={
+function read(args){
+    var temp=eval(args);
+    console.log(temp);
+    if(temp===undefined){
+        return 0;
+    }
+    return temp;
+}module.exports={
     name:'affliction',
     description:'Make a roll to resist an affliction.',
     aliases:['aff'],
