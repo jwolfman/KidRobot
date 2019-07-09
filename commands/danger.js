@@ -20,8 +20,9 @@ function read(args){
         for(var c=0;c<loops;c++) {
             response += "\n";
             var roll = Math.floor(Math.random() * 20 + 1);
+            var crit = (roll == 20);
             response += "Rolled " + roll;
-            if (roll == 20) {
+            if (crit) {
                 response += " to crit";
             }
             var bonus = read(args[0]);
@@ -31,7 +32,7 @@ function read(args){
             }
             response += " against a DC of 10 for ";
             var deg;
-            if (roll == 20) {
+            if (crit) {
                 deg = Math.floor((roll + bonus + 5 - 10) / 5);
             } else {
                 deg = Math.floor((roll + bonus - 10) / 5);

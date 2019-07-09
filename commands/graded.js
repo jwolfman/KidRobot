@@ -21,7 +21,8 @@ function read(args){
             response += "\n";
             var roll = Math.floor(Math.random() * 20 + 1);
             response += "Rolled " + roll;
-            if (roll == 20) {
+            var crit = (roll == 20);
+            if (crit) {
                 response += " to crit";
             }
             var bonus = read(args[0]);
@@ -35,7 +36,7 @@ function read(args){
                 return message.channel.send("Second (effect rank) argument must be an integer," + message.author + "!");
             }
             var deg;
-            if (roll == 20) {
+            if (crit) {
                 deg = Math.floor((roll + bonus + 5 - 15 - rank) / 5);
             } else {
                 deg = Math.floor((roll + bonus - 15 - rank) / 5);

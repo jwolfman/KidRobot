@@ -21,8 +21,9 @@ function read(args){
         for(var c=0;c<loops;c++) {
             response += "\n";
             var roll = Math.floor(Math.random() * 20 + 1);
+            var crit = (roll == 20);
             response += "Rolled " + roll;
-            if (roll == 20) {
+            if (crit) {
                 response += " to crit";
             }
             var bonus = read(args[0]);
@@ -31,7 +32,7 @@ function read(args){
                 return message.channel.send("First (bonus) argument must be an integer," + message.author + "!");
             }
             response += " for a total of " + (roll + bonus) + "!";
-            if (roll == 20) {
+            if (crit) {
                 response += " That's an effective " + (roll + bonus + 5) + "!";
             }
         }
