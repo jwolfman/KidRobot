@@ -16,12 +16,12 @@ module.exports={
         if(roll==20){
             response+=" to crit";
         }
-        var bonus=parseInt(args[0]);
+        var bonus=eval(args[0]);
         response+=" with a bonus of "+bonus;
         if(bonus==NaN){
             return message.channel.send("First (bonus) argument must be an integer,"+message.author+"!");
         }
-        var rank=parseInt(args[1]);
+        var rank=eval(args[1]);
         response+=" against a defense rank of  "+rank+" for ";
         if(rank==NaN){
             return message.channel.send("Second (effect rank) argument must be an integer,"+message.author+"!");

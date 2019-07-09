@@ -20,7 +20,7 @@ module.exports={
         if(roll<11){
             roll+=10;
         }
-        var bonus=parseInt(args[0]);
+        var bonus=eval(args[0]);
         response+=" with a bonus of "+bonus;
         if(bonus==NaN){
             return message.channel.send("First (bonus) argument must be an integer,"+message.author+"!");
