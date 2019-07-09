@@ -15,18 +15,15 @@ function read(args){
     usage:'[bonus] [DC]',
     execute:function(message,args){
         var response=message.author;
-        if(args.length!=2){
+        /*if(args.length!=2){
             return message.channel.send("Command needs a bonus and rank as input,"+message.author+"!");
-        }
+        }*/
         var roll=Math.floor(Math.random()*20+1);
         response+=" rolled "+roll;
         if(roll==20){
             response+=" to crit";
         }
-        var bonus=eval(args[0]);
-        if(bonus===undefined){
-            bonus=0;
-        }
+        var bonus=read(args[0]);
         response+=" with a bonus of "+bonus;
         if(bonus==NaN){
             return message.channel.send("First (bonus) argument must be an integer,"+message.author+"!");
