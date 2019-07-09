@@ -14,7 +14,7 @@ function read(args){
     usage:'[bonus] [rank]',
     execute:function(message,args){
         var response=message.author;
-        var loops=read(args[1]);
+        var loops=read(args[2]);
         if(loops==0){
             loops++;
         }
