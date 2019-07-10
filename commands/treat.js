@@ -25,6 +25,13 @@ function read(args){
             if (crit) {
                 response += " to crit";
             }
+            var hp=false;
+            if(args[1]=="hp"||args[1]=="HP"||args[1]=="hero"||args[1]=="Hero"){
+                hp=true;
+            }
+            if (hp&&roll < 11) {
+                roll += 10;
+            }
             var bonus = read(args[0]);
             response += " with a bonus of " + bonus;
             if (bonus == NaN) {
