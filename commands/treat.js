@@ -13,9 +13,12 @@ function read(args){
     usage:'[bonus]',
     execute:function(message,args){
         var response=message.author;
-        var loops=read(args[1]);
-        if(loops==0){
-            loops++;
+        var loops=1;
+        var hp=false;
+        if(args[1]=="hp"||args[1]=="HP"||args[1]=="hero"||args[1]=="Hero"){
+            hp=true;
+        }else{
+            loops=read(args[1]);
         }
         for(var c=0;c<loops;c++) {
             response+="\n";
@@ -24,10 +27,6 @@ function read(args){
             response += "Rolled " + roll;
             if (crit) {
                 response += " to crit";
-            }
-            var hp=false;
-            if(args[1]=="hp"||args[1]=="HP"||args[1]=="hero"||args[1]=="Hero"){
-                hp=true;
             }
             if (hp&&roll < 11) {
                 roll += 10;
