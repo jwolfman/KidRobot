@@ -12,7 +12,7 @@ module.exports={
         const { commands } = message.client;
 
         if (!args.length) {
-            data.push('Here\'s a list of all my commands:');
+            /*data.push('Here\'s a list of all my commands:');
             data.push(commands.map(command => command.name).join(', '));
             data.push('\nYou can send \'${prefix}help [command name]\' to get info on a specific command!');
 
@@ -20,11 +20,34 @@ module.exports={
                 .then(() => {
                 if (message.channel.type === 'dm') return;
             message.reply('I\'ve sent you a DM with all my commands!');
-        })
-        .catch(error => {
-            console.error('Could not send help DM to '+message.author.tag+'.\n', error);
-        message.reply('it seems like I can\'t DM you!');
-        });
+            })
+            .catch(error => {
+                console.error('Could not send help DM to '+message.author.tag+'.\n', error);
+            message.reply('it seems like I can\'t DM you!');
+            });*/
+            const embed = new Discord.RichEmbed()
+                .setTitle("Commands")
+                .setAuthor("KidRobot", "kid_robot_by_d_mac_d4gripk.jpg")
+                /*
+                 * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
+                 */
+                .setColor(0x00AE86)
+                .setDescription("Here\'s a list of all my commands:\nYou can send \'${prefix}help [command name]\' to get info on a specific command!")
+                //.setFooter("This is the footer text, it can hold 2048 characters", "http://i.imgur.com/w1vhFSR.png")
+                //.setImage("http://i.imgur.com/yVpymuV.png")
+                //.setThumbnail("http://i.imgur.com/p2qNFag.png")
+                /*
+                 * Takes a Date object, defaults to current date.
+                 */
+                //.setTimestamp()
+                //.setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
+                //.addField("This is a field title, it can hold 256 characters",
+                //"This is a field value, it can hold 1024 characters.")
+            for(var command of commands){
+                embed.addField(command.name,command.description);
+            }
+
+            message.channel.send({embed});
         }
         const name = args[0].toLowerCase();
         const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
