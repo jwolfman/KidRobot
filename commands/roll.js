@@ -16,7 +16,7 @@ function read(args){
         var response=message.author;
         var loops=1;
         var hp=false;
-        if(args[1]=="hp"||args[1]=="HP"||args[1]=="hero"||args[1]=="Hero"){
+        if(0==1){//args[1]=="hp"||args[1]=="HP"||args[1]=="hero"||args[1]=="Hero"){
             hp=true;
         }else{
             loops=read(args[1]);
