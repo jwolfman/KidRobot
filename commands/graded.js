@@ -10,12 +10,15 @@ function read(args){
 }module.exports={
     name:'graded',
     description:'Make a roll for a general graded check against a set DC',
-    usage:'[bonus] [DC]',
+    usage:'(bonus) (DC) (attempts/hp)',
     execute:function(message,args){
         var response=message.author;
-        var loops=read(args[2]);
-        if(loops==0){
-            loops++;
+        var loops=1;
+        var hp=false;
+        if(args[2]=="hp"||args[2]=="HP"||args[2]=="hero"||args[2]=="Hero"){
+            hp=true;
+        }else{
+            loops=read(args[1]);
         }
         for(var c=0;c<loops;c++) {
             response += "\n";
@@ -24,6 +27,9 @@ function read(args){
             var crit = (roll == 20);
             if (crit) {
                 response += " to crit";
+            }
+            if (hp&&roll < 11) {
+                roll += 10;
             }
             var bonus = read(args[0]);
             response += " with a bonus of " + bonus;
