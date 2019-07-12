@@ -10,7 +10,6 @@ module.exports={
     execute:function(message,args){
         const data = [];
         const { commands } = message.client;
-        console.log("before if");
         if (!args.length) {
             /*data.push('Here\'s a list of all my commands:');
             data.push(commands.map(command => command.name).join(', '));
@@ -50,7 +49,7 @@ module.exports={
             message.channel.send({embed});
         }
         const name = args[0].toLowerCase();
-        const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
+        var command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
         if (!command) {
             return message.reply('that\'s not a valid command!');
         }
