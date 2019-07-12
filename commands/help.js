@@ -10,7 +10,7 @@ module.exports={
     execute:function(message,args){
         const data = [];
         const { commands } = message.client;
-
+        console.log("before if");
         if (!args.length) {
             /*data.push('Here\'s a list of all my commands:');
             data.push(commands.map(command => command.name).join(', '));
