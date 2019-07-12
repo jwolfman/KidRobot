@@ -8,6 +8,7 @@ module.exports={
     aliases:['commands'],
     usage:'(command name)',
     execute:function(message,args){
+        const Discord=require('discord.js');
         const data = [];
         const { commands } = message.client;
         if (!args.length) {
