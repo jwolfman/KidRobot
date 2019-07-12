@@ -4,7 +4,7 @@
 function read(args){
     var temp=eval(args);
     if(temp===undefined||temp==NaN){
-        return 0;
+        return 1;
     }
     return temp;
 }module.exports={
