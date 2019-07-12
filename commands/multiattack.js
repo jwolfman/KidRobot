@@ -22,6 +22,9 @@ function read(args){
         }else{
             loops=read(args[1]);
         }
+        if(loops==0){
+            loops++;
+        }
         for(var c=0;c<loops;c++) {
             response += "\n";
             var roll = Math.floor(Math.random() * 20 + 1);

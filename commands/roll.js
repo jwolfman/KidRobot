@@ -4,7 +4,7 @@
 function read(args){
     var temp=eval(args);
     if(temp===undefined||temp==NaN){
-        return 1;
+        return 0;
     }
     return temp;
 }module.exports={
@@ -21,7 +21,9 @@ function read(args){
         }else{
             loops=read(args[1]);
         }
-        console.log(args[1],loops);
+        if(loops==0){
+            loops++;
+        }
         for(var c=0;c<loops;c++) {
             response += "\n";
             var roll = Math.floor(Math.random() * 20 + 1);
