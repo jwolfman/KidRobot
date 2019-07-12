@@ -47,7 +47,7 @@ module.exports={
                 embed.addField(command.name,command.description);
             }
 
-            message.channel.send({embed});
+            return message.channel.send({embed});
         }
         const name = args[0].toLowerCase();
         var command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
@@ -59,6 +59,6 @@ module.exports={
         if (command.description) data.push('**Description:** '+command.description);
         if (command.usage) data.push('**Usage:** '+prefix+command.name+' '+command.usage);
         data.push('**Cooldown:** '+command.cooldown || 3+' second(s)');
-        message.channel.send(data, { split: true });
+        return message.channel.send(data, { split: true });
     }
 }
