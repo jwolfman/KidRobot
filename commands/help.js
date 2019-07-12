@@ -32,7 +32,7 @@ module.exports={
                  * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
                  */
                 .setColor(0x00AE86)
-                .setDescription("Here\'s a list of all my commands:\nYou can send \'${prefix}help [command name]\' to get info on a specific command!")
+                .setDescription("Here\'s a list of all my commands:\nYou can send \'${prefix}help [command name]\' to get info on a specific command!");
                 //.setFooter("This is the footer text, it can hold 2048 characters", "http://i.imgur.com/w1vhFSR.png")
                 //.setImage("http://i.imgur.com/yVpymuV.png")
                 //.setThumbnail("http://i.imgur.com/p2qNFag.png")
@@ -43,9 +43,9 @@ module.exports={
                 //.setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
                 //.addField("This is a field title, it can hold 256 characters",
                 //"This is a field value, it can hold 1024 characters.")
-            /*for(var command of commands){
+            for(var command of commands){
                 embed.addField(command.name,command.description);
-            }*/
+            }
 
             message.channel.send({embed});
         }
