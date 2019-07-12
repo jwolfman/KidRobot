@@ -43,9 +43,9 @@ module.exports={
                 //.setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
                 //.addField("This is a field title, it can hold 256 characters",
                 //"This is a field value, it can hold 1024 characters.")
-            for(var command of commands){
+            /*for(var command of commands){
                 embed.addField(command.name,command.description);
-            }
+            }*/
 
             message.channel.send({embed});
         }
