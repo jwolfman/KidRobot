@@ -27,7 +27,7 @@ module.exports={
             });*/
             const embed = new Discord.RichEmbed();
             embed.setTitle("Commands");
-            embed.setAuthor("KidRobot", "kid_robot_by_d_mac_d4gripk.jpg");
+            //embed.setAuthor("KidRobot", "kid_robot_by_d_mac_d4gripk.jpg");
                 /*
                  * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
                  */
