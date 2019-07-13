@@ -32,7 +32,7 @@ module.exports={
                  * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
                  */
                 //.setColor(0x00AE86)
-            embed.setDescription("Here\'s a list of all my commands:\nYou can send \'"+${prefix}+"help [command name]\' to get info on a specific command!");
+            embed.setDescription("Here\'s a list of all my commands:\nYou can send \'!help [command name]\' to get info on a specific command!");
                 //.setFooter("This is the footer text, it can hold 2048 characters", "http://i.imgur.com/w1vhFSR.png")
                 //.setImage("http://i.imgur.com/yVpymuV.png")
                 //.setThumbnail("http://i.imgur.com/p2qNFag.png")
