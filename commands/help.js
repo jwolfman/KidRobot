@@ -11,7 +11,6 @@ module.exports={
         const Discord=require('discord.js');
         const data = [];
         const { commands } = message.client;
-        console.log(commands);
         if (!args.length) {
             /*data.push('Here\'s a list of all my commands:');
             data.push(commands.map(command => command.name).join(', '));
@@ -44,7 +43,7 @@ module.exports={
                 //.setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
                 //.addField("This is a field title, it can hold 256 characters",
                 //"This is a field value, it can hold 1024 characters.")
-            for(var command of commands){
+            for(var command in commands){
                 embed.addField(command.name,command.description);
             }
 
