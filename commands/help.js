@@ -25,14 +25,14 @@ module.exports={
                 console.error('Could not send help DM to '+message.author.tag+'.\n', error);
             message.reply('it seems like I can\'t DM you!');
             });*/
-            const embed = new Discord.RichEmbed()
-                .setTitle("Commands")
-                .setAuthor("KidRobot", "kid_robot_by_d_mac_d4gripk.jpg")
+            const embed = new Discord.RichEmbed();
+                //.setTitle("Commands")
+                //.setAuthor("KidRobot", "kid_robot_by_d_mac_d4gripk.jpg")
                 /*
                  * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
                  */
-                .setColor(0x00AE86)
-                .setDescription("Here\'s a list of all my commands:\nYou can send \'${prefix}help [command name]\' to get info on a specific command!");
+                //.setColor(0x00AE86)
+                //.setDescription("Here\'s a list of all my commands:\nYou can send \'${prefix}help [command name]\' to get info on a specific command!");
                 //.setFooter("This is the footer text, it can hold 2048 characters", "http://i.imgur.com/w1vhFSR.png")
                 //.setImage("http://i.imgur.com/yVpymuV.png")
                 //.setThumbnail("http://i.imgur.com/p2qNFag.png")
