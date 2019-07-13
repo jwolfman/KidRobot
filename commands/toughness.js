@@ -19,7 +19,7 @@ function read(args){
         if(args[2]=="hp"||args[2]=="HP"||args[2]=="hero"||args[2]=="Hero"){
             hp=true;
         }else{
-            loops=read(args[1]);
+            loops=read(args[2]);
         }
         if(loops==0){
             loops++;
