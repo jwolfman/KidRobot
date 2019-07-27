@@ -2,7 +2,7 @@
  * Created by joshwolfman on 6/14/19.
  */
 const Discord=require('discord.js');
-//const auth = require('./auth.json');
+const auth = require('./auth.json');
 const config=require('./config.json');
 const fs=require('fs');
 const prefix=config.prefix;
@@ -15,7 +15,7 @@ logger.remove(logger.transports.Console);
 logger.level = 'debug';
 // Initialize Discord Bot
 const bot = new Discord.Client({
-    token: process.env.token,
+    token: auth.token,//process.env.token,
     autorun: true
 });
 bot.commands=new Discord.Collection();
@@ -76,10 +76,4 @@ bot.on('message', function(message){
             message.reply('there was an error trying to execute that command!');
         }    }
 });
-bot.login(process.env.token);
-var reqTimer = setTimeout(function wakeUp() {
-    request("https://nameless-gorge-19527.herokuapp.com", function() {
-        console.log("WAKE UP DYNO");
-    });
-    return reqTimer = setTimeout(wakeUp, 1200000);
-}, 1200000);
+bot.login(auth.token);//process.env.token);
