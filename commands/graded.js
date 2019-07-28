@@ -70,9 +70,9 @@ module.exports={
             }
             var deg;
             if (crit) {
-                deg = Math.floor((roll + bonus + 5 - 15 - rank) / 5);
+                deg = Math.floor((roll + bonus + 5 - DC) / 5);
             } else {
-                deg = Math.floor((roll + bonus - 15 - rank) / 5);
+                deg = Math.floor((roll + bonus - DC) / 5);
             }
             if (deg >= 0) {
                 response += (deg + 1) + " degrees of success!";
