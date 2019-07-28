@@ -2,16 +2,37 @@
  * Created by joshwolfman on 6/17/19.
  */
 function read(args){
-    var temp=eval(args);
+    var temp;
+    try{
+        temp=eval(args);
+    }catch(error){
+        return 0;
+    }
     if(temp===undefined){
         return 0;
     }
     return temp;
-}module.exports={
+}
+module.exports={
     name:'attitude',
     description:'Make a persuasion roll to improve a target\'s attitude towards you.',
     usage:'(bonus) (attempts/hp)',
     execute:function(message,args){
+        var mes="";
+        var mesStart=false;
+        for(var c=0;c<args.length;c++){
+            if(mesStart){
+                if(mes.length>0) {
+                    mes += " " + args[c];
+                }else{
+                    mes+=args[c];
+                }
+            }
+            if(args[c].indexOf("#")>-1){
+                mesStart=true;
+                mes=args[c].substring(1);
+            }
+        }
         var response=message.author;
         var loops=1;
         var hp=false;
@@ -25,6 +46,9 @@ function read(args){
         }
         for(var c=0;c<loops;c++) {
             response += "\n";
+            if(mes.length>0){
+                response+=mes+"=";
+            }
             var roll = Math.floor(Math.random() * 20 + 1);
             var crit = (roll == 20);
             response += "Rolled " + roll;

@@ -2,17 +2,38 @@
  * Created by joshwolfman on 7/2/19.
  */
 function read(args){
-    var temp=eval(args);
+    var temp;
+    try{
+        temp=eval(args);
+    }catch(error){
+        return 0;
+    }
     if(temp===undefined){
         return 0;
     }
     return temp;
-}module.exports={
+}
+module.exports={
     name:'multiattack',
     description:'Make a roll for a multiattack check against a set DC',
     aliases:['mult','multi'],
     usage:'(bonus) (rank) (attempts/hp)',
     execute:function(message,args){
+        var mes="";
+        var mesStart=false;
+        for(var c=0;c<args.length;c++){
+            if(mesStart){
+                if(mes.length>0) {
+                    mes += " " + args[c];
+                }else{
+                    mes+=args[c];
+                }
+            }
+            if(args[c].indexOf("#")>-1){
+                mesStart=true;
+                mes=args[c].substring(1);
+            }
+        }
         var response=message.author;
         var loops=read(args[2]);
         var loops=1;
@@ -27,6 +48,9 @@ function read(args){
         }
         for(var c=0;c<loops;c++) {
             response += "\n";
+            if(mes.length>0){
+                response+=mes+"=";
+            }
             var roll = Math.floor(Math.random() * 20 + 1);
             var crit = (roll == 20);
             response += "Rolled " + roll;

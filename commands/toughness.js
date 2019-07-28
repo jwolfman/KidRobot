@@ -2,17 +2,38 @@
  * Created by joshwolfman on 6/17/19.
  */
 function read(args){
-    var temp=eval(args);
+    var temp;
+    try{
+        temp=eval(args);
+    }catch(error){
+        return 0;
+    }
     if(temp===undefined){
         return 0;
     }
     return temp;
-}module.exports={
+}
+module.exports={
     name:'toughness',
     description:'Make a toughness roll based on a bonus and the ranks of the damage effect',
     aliases:['tough','t'],
     usage:'(bonus) (ranks) (attempts/hp)',
     execute:function(message, args){
+        var mes="";
+        var mesStart=false;
+        for(var c=0;c<args.length;c++){
+            if(mesStart){
+                if(mes.length>0) {
+                    mes += " " + args[c];
+                }else{
+                    mes+=args[c];
+                }
+            }
+            if(args[c].indexOf("#")>-1){
+                mesStart=true;
+                mes=args[c].substring(1);
+            }
+        }
         var response=message.author;
         var loops=1;
         var hp=false;
@@ -26,6 +47,9 @@ function read(args){
         }
         for(var c=0;c<loops;c++) {
             response += "\n";
+            if(mes.length>0){
+                response+=mes+"=";
+            }
             var roll = Math.floor(Math.random() * 20 + 1);
             response += "Rolled " + roll;
             var crit = (roll == 20);

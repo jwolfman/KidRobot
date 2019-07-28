@@ -50,7 +50,7 @@ bot.on('message', function(message){
 
             return message.channel.send(reply);
         }
-        if (!cooldowns.has(command.name)) {
+        /*if (!cooldowns.has(command.name)) {
             cooldowns.set(command.name, new Discord.Collection());
         }
 
@@ -68,7 +68,7 @@ bot.on('message', function(message){
         }
 
         timestamps.set(message.author.id, now);
-        setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
+        setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);*/
         try {
             command.execute(message, args);
         } catch (error) {
