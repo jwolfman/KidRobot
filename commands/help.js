@@ -43,7 +43,6 @@ module.exports={
                 //.addField("This is a field title, it can hold 256 characters",
                 //"This is a field value, it can hold 1024 characters.")
             for(var [key,command] of commands.entries()){
-                console.log(command);
                 embed.addField(command.name,command.description);
             }
 

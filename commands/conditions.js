@@ -30,7 +30,6 @@ module.exports={
                 embed.setDescription(cond.data);
                 return message.channel.send({embed});
             }else if(args[0]>0&&args[0]<4){
-                console.log(table,table[parseInt(args[0])]);
                 embed.setTitle("Tier "+args[0]+" Conditions");
                 embed.setDescription(table[args[0]]);
                 return message.channel.send({embed});
