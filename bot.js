@@ -19,9 +19,9 @@ const bot = new Discord.Client({
     autorun: true
 });
 bot.commands=new Discord.Collection();
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync(process.cwd()+'/commands').filter(file => file.endsWith('.js'));
 for (var file of commandFiles) {
-	const command = require('./commands/'+file);
+	const command = require(process.cwd()+'/commands/'+file);
 
 	// set a new item in the Collection
 	// with the key as the command name and the value as the exported module
