@@ -19,13 +19,13 @@ const Discord=require('discord.js');
 module.exports={
     name:'conditions',
     description:'Get information on conditions.',
-    aliases:['cond'],
+    aliases:['cond','condition'],
     usage:'(condition)',
     execute:function(message,args) {
         const embed=new Discord.RichEmbed();
         if(args.length!=0){
-            if(basic[args[0]]||combined[args[0]]){
-                var cond=basic[args[0]]||combined[args[0]];
+            if(basic[args[0].toLowerCase()]||combined[args[0].toLowerCase()]){
+                var cond=basic[args[0].toLowerCase()]||combined[args[0].toLowerCase()];
                 embed.setTitle(cond.name);
                 embed.setDescription(cond.data);
                 return message.channel.send({embed});
