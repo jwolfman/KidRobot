@@ -58,7 +58,8 @@ module.exports={
             }
             if (hp&&roll < 11) {
                 roll += 10;
-            }else if(roll==1){
+            }
+            if(roll==1&&!hp){
                 response+=" which is a critical failure! That's **Incapacitated**!";
             }else {
                 var bonus = read(args[0]);
