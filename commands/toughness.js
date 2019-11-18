@@ -60,7 +60,6 @@ module.exports={
                 roll += 10;
             }else if(roll==1){
                 response+=" which is a critical failure! That's **Incapacitated**!";
-                return message.channel.send(response);
             }else {
                 var bonus = read(args[0]);
                 response += " with a bonus of " + bonus;
