@@ -59,7 +59,7 @@ module.exports={
             if (hp&&roll < 11) {
                 roll += 10;
             }else if(roll==1){
-                response+=" which is a critical failure! That's a third degree effect!";
+                response+=" which is a critical failure! That's a **third degree effect**!";
             }else {
                 var bonus = read(args[0]);
                 response += " with a bonus of " + bonus;
@@ -78,9 +78,9 @@ module.exports={
                     deg = Math.floor((roll + bonus - 10 - rank) / 5);
                 }
                 if (deg >= 0) {
-                    response += (deg + 1) + " degrees of success! No effect!";
+                    response += "**"+(deg + 1) + " degrees of success**! No effect!";
                 } else {
-                    response += -1 * deg + " degrees of failure!";
+                    response += "**"+-1 * deg + " degrees of failure**!";
                 }
             }
         }
