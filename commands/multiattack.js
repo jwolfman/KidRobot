@@ -76,7 +76,9 @@ module.exports={
             } else {
                 deg = Math.floor((roll + bonus - 10 - rank) / 5);
             }
-            if (deg >= 0) {
+            if(roll==1){
+                response+=" which is a critical failure! That's a **miss**!";
+            }else{
                 response += (deg + 1) + " degrees of success!";
                 if (deg + 1 == 2) {
                     response += " That's a hit and the effect gets +2!";

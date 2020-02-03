@@ -16,7 +16,7 @@ function read(args){
 module.exports= {
     name: 'checker',
     description: 'Check a value against another.',
-    aliases: ['c','check'],
+    aliases: ['c','check','comp','compare'],
     usage: '(value) (DC)',
     execute: function (message, args) {
         var mes="";
