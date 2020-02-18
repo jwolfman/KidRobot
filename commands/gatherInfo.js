@@ -16,7 +16,7 @@ function read(args){
 module.exports={
     name:'gatherInfo',
     description:'Make an investigation roll to find information.',
-    alias:'gather','gatherInformation',
+    alias:['gather','gatherInformation'],
     usage:'(bonus) (attempts/hp)',
     execute:function(message,args){
         var mes="";
