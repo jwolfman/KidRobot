@@ -58,7 +58,8 @@ module.exports={
             }
             if (hp&&roll < 11) {
                 roll += 10;
-            }else if(roll==1){
+            }
+            if(roll==1){
                 response+=" which is a critical failure! That's a **third degree effect**!";
             }else {
                 var bonus = read(args[0]);
