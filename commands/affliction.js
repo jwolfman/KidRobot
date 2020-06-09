@@ -59,30 +59,26 @@ module.exports={
             if (hp&&roll < 11) {
                 roll += 10;
             }
-            if(roll==1){
-                response+=" which is a critical failure! That's a **third degree effect**!";
-            }else {
-                var bonus = read(args[0]);
-                response += " with a bonus of " + bonus;
-                if (bonus == NaN) {
-                    return message.channel.send("First (bonus) argument must be an integer," + message.author + "!");
-                }
-                var rank = read(args[1]);
-                response += " against a rank " + rank + " effect for ";
-                if (rank == NaN) {
-                    return message.channel.send("Second (effect rank) argument must be an integer," + message.author + "!");
-                }
-                var deg;
-                if (crit) {
-                    deg = Math.floor((roll + bonus + 5 - 10 - rank) / 5);
-                } else {
-                    deg = Math.floor((roll + bonus - 10 - rank) / 5);
-                }
-                if (deg >= 0) {
-                    response += "**"+(deg + 1) + " degrees of success**! No effect!";
-                } else {
-                    response += "**"+-1 * deg + " degrees of failure**!";
-                }
+            var bonus = read(args[0]);
+            response += " with a bonus of " + bonus;
+            if (bonus == NaN) {
+                return message.channel.send("First (bonus) argument must be an integer," + message.author + "!");
+            }
+            var rank = read(args[1]);
+            response += " against a rank " + rank + " effect for ";
+            if (rank == NaN) {
+                return message.channel.send("Second (effect rank) argument must be an integer," + message.author + "!");
+            }
+            var deg;
+            if (crit) {
+                deg = Math.floor((roll + bonus + 5 - 10 - rank) / 5);
+            } else {
+                deg = Math.floor((roll + bonus - 10 - rank) / 5);
+            }
+            if (deg >= 0) {
+                response += "**"+(deg + 1) + " degrees of success**! No effect!";
+            } else {
+                response += "**"+-1 * deg + " degrees of failure**!";
             }
         }
         return message.channel.send(response);

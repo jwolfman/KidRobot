@@ -68,6 +68,9 @@ module.exports={
             if (crit) {
                 response += " That's an effective " + (roll + bonus + 5) + "!";
             }
+            if(roll==1){
+                response+=" If that's an attack it misses!";
+            }
         }
         return message.channel.send(response);
     }
