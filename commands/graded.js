@@ -16,6 +16,7 @@ function read(args){
 module.exports={
     name:'graded',
     description:'Make a roll for a general graded check against a set DC',
+    alias:['g','grade'],
     usage:'(bonus) (DC) (attempts/hp)',
     execute:function(message,args){
         var mes="";

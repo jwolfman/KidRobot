@@ -1,26 +1,26 @@
 /**
- * Created by joshwolfman on 7/27/19.
+ * Created by joshwolfman on 6/10/20.
  */
-const file=require("../conditions.json");
-const basic=file["basicConditions"];
-const combined=file["combinedConditions"];
+const file=require("../rules.json");
+const actions=file["actions"];
+const maneuvers=file["maneuvers"];
+const ee=file["extraEffort"];
+const hp=file["heroPoint"];
 var table=[[],[],[],[]];
-for(var cond in basic){
-    if(basic[cond].tier){
-        table[basic[cond].tier].push(basic[cond].name);
-    }
+for(var c in actions){
+    table[actions[c]].push(actions[c].name);
 }
-for(var cond in combined){
+/*for(var cond in combined){
     if(combined[cond].tier){
         table[combined[cond].tier].push(combined[cond].name);
     }
-}
+}*/
 const Discord=require('discord.js');
 module.exports={
-    name:'conditions',
-    description:'Get information on conditions.',
-    aliases:['cond','condition'],
-    usage:'(condition)',
+    name:'rules',
+    description:'Get information on rules.',
+    aliases:['rule','ru'],
+    usage:'(rules)',
     execute:function(message,args) {
         const embed=new Discord.RichEmbed();
         if(args.length!=0){
@@ -35,26 +35,26 @@ module.exports={
                 return message.channel.send({embed});
             }
         }
-        embed.setTitle("Conditions");
-        embed.setDescription("A full list of the conditions");
+        embed.setTitle("Rules");
+        embed.setDescription("A full list of the conditions covered.");
         var names="";
-        for(var cond in basic){
+        for(var c in actions){
             if(names==""){
-                names+=basic[cond].name;
+                names+=actions[c].name;
             }else{
-                names+=", "+basic[cond].name;
+                names+=", "+actions[c].name;
             }
         }
-        embed.addField("Basic Conditions",names);
+        embed.addField("Actions",names);
         names="";
-        for(var cond in combined){
+        for(var c in maneuvers){
             if(names==""){
-                names+=combined[cond].name;
+                names+=maneuvers[c].name;
             }else{
-                names+=", "+combined[cond].name;
+                names+=", "+maneuvers[c].name;
             }
         }
-        embed.addField("Combined Conditions",names);
+        embed.addField("Maneuvers",names);
         return message.channel.send({embed});
     }
 }
