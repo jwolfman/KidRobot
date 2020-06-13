@@ -5,7 +5,7 @@
             "attack":"-",
             "defense":"-",
             "type":"Standard",
-            "quick":"",
+            "quick":"Make a DC 10 Close Attack check to give an ally a bonus to attack or defense against the target opponent.",
             "full":"If you are in position to attack an opponent, you can attempt to aid an ally engaged in melee with that opponent as a standard action. This is like a team check (see Team Checks in The Basics chapter): You make an attack check against DC 10. If you succeed, you don’t actually hit or affect the opponent, but success grants your ally gains a +2 circumstance bonus on an attack check against that opponent or a +2 circumstance bonus to Defense against that opponent (your choice) until the end of your ally’s next turn. Three or more degrees of success grant a +5 bonus."
         },
         "aim":{
@@ -13,156 +13,312 @@
             "attack":"+2/+5",
             "defense":"-",
             "type":"Standard",
-            "quick":"",
-            "full":"By taking a standard action to aim and line up an attack, you get a bonus to hit when you make the attack. If you’re making a close attack, or a ranged attack at close range, you get a +5 circumstance bonus on your attack check. If you’re making a ranged attack from a greater distance, you get a +2 circumstance bonus. However, you are vulnerable while aiming and it requires a free action to maintain your aim before you make your attack. If you are unable to maintain it, you lose its benefit. Once you aim, your next action must be to make the attack. Taking a different action spoils your aim and you lose the bonus."
+            "quick":"Aim an attack and gain a bonus so long as the attack is your next action.",
+            "full":"By taking a standard action to aim and line up an attack, you get a bonus to hit when you make the attack. If you’re making a close attack, or a ranged attack at close range, you get a +5 circumstance bonus on your attack check. If you’re making a ranged attack from a greater distance, you get a +2 circumstance bonus.\nHowever, you are vulnerable while aiming and it requires a free action to maintain your aim before you make your attack. If you are unable to maintain it, you lose its benefit.\nOnce you aim, your next action must be to make the attack. Taking a different action spoils your aim and you lose the bonus."
         },
         "attack":{
            "name":"Attack",
             "attack":"-",
             "defense":"-",
             "type":"Standard",
-            "quick":"",
-            "full":""
+            "quick":"Make an attack.",
+            "full":"With a standard action, you can make an attack check against any opponent within the attack’s range. If the attack is an area effect or perception range, no attack check is needed. It affects the area or target automatically."
         },
         "charge":{
             "name":"Charge",
             "attack":"-2",
             "defense":"-",
             "type":"Standard",
-            "quick":"",
-            "full":""
+            "quick":"Move and make a close attack as an action.",
+            "full":"You rush forward to attack. You move your speed rank in a mode of movement available to you in a relatively straight line towards your target. At the end of your movement, you perform a close attack against your opponent with a –2 circumstance penalty to the attack check.\nYou can combine a charge action with a move action, allowing you to move up to twice your speed (your speed rank as a move action, then your speed rank again when you charge)."
         },
         "command":{
             "name":"Command",
             "attack":"-",
             "defense":"-",
             "type":"Move",
-            "quick":"",
-            "full":""
+            "quick":"Issue a single order to characters you control.",
+            "full":"Issuing a command to a character under your control–-a minion or a thrall—-requires a move action. If you want to issue different commands to different characters or groups, each one requires a move action (so you can issue two commands per round as two move actions)."
         },
         "crawl":{
             "name":"Crawl",
             "attack":"-",
             "defense":"-",
             "type":"Move",
-            "quick":"",
-            "full":""
+            "quick":"Move while prone.",
+            "full":"While prone, you can only move by crawling. You crawl at your normal ground speed –1 rank (or half your normal speed).\nCharacters with the Slither effect of Movement crawl at their normal ground speed. See movement in the powers chapter for details."
         },
         "defend":{
             "name":"Defend",
             "attack":"-",
             "defense":"-",
             "type":"Standard",
-            "quick":"",
-            "full":""
+            "quick":"Actively defend for yourself.",
+            "full":"Rather than attacking, you focus on defense. Make an opposed check of your appropriate active defense versus any attack made on you until the start of your next turn. Add 10 to any roll of 10 or less that you make on these checks, just as if you spent a hero point (thus ensuring a minimum roll of 11). The attacker must equal or exceed your opposed check result in order to hit you."
         },
         "delay":{
             "name":"Delay",
             "attack":"-",
             "defense":"-",
             "type":"None",
-            "quick":"",
-            "full":""
+            "quick":"Move your turn later in initiative.",
+            "full":"When you delay, you choose to take your turn later in the initiative order. You must delay your entire turn. You cannot delay if you have already taken an action on your turn, or if you are unable to take actions.\nAt any point after any other character in the conflict has acted, you can choose to take your turn. Your initiative moves into the new place in the order where you act, and you take your normal allocation of actions. If you do not act before your initiative comes up in the next round, your turn ends, you lose your delayed turn, and your initiative remains where it is.\nBeneficial effects lasting until the end of your turn end when you choose to delay, but harmful effects that last until the end of your turn last until after you act. Likewise, you do not make resistance checks until after you have taken your turn, so delaying can draw out some effects."
         },
         "disarm":{
             "name":"Disarm",
             "attack":"-2",
             "defense":"-",
             "type":"Standard",
-            "quick":"",
-            "full":""
+            "quick":"Knock an object from an opponent's grip.",
+            "full":"You attempt to knock an item—-such as a weapon or device—-out of an opponent’s grasp. Make an attack check against the defender with a –2 penalty. If you attempt to disarm with a ranged attack, you are at –5 penalty. If your attack succeeds, make an opposed check of your attack’s damage against the defender’s Strength. If you win, the defender dropped the held object. If you made the disarm unarmed, you can grab the dropped object as a free action. If you make a disarm attempt with a melee weapon and lose the opposed check, the defender may immediately make an attempt to disarm you as a reaction; make another opposed damage vs. Strength check. If this disarm attempt fails, you do not, however, get an additional attempt to disarm the defender."
         },
-        "dropItem":{
+        "dropitem":{
             "name":"Drop an Item",
             "attack":"-",
             "defense":"-",
             "type":"Free",
-            "quick":"",
-            "full":""
+            "quick":"Drop an item.",
+            "full":"Dropping a held item is a free action (although dropping or throwing an item with the intention of hitting something with it is a standard attack action)."
         },
-        "dropProne":{
+        "dropprone":{
             "name":"Drop Prone",
             "attack":"-",
             "defense":"-",
             "type":"Free",
-            "quick":"",
-            "full":""
+            "quick":"Drop prone.",
+            "full":"Dropping to a prone position is a free action, although getting up requires a move action (see Stand)."
         },
         "escape":{
             "name":"Escape",
             "attack":"-",
             "defense":"-",
             "type":"Move",
-            "quick":"",
-            "full":""
+            "quick":"Try to escape a grab.",
+            "full":"You attempt to escape from a successful grab (see Grab). Make a check of your Athletics or Acrobatics against the routine check result of your opponent’s Strength or grab effect rank. If you succeed, you end the grab and can move away from your opponent, up to your normal ground speed minus one rank, if you choose. If you fail, you are still grabbed."
         },
         "grab":{
             "name":"Grab",
             "attack":"-",
             "defense":"-",
             "type":"Standard",
-            "quick":"",
-            "full":""
+            "quick":"Make an attempt to grab a target.",
+            "full":"You attempt to grab a target. Make an attack check against the target. If successful, the target makes a resistance check against your Strength (or the rank of a grabbing effect) using the better of Strength or Dodge. If you win with one degree of success, the target is restrained (immobile and vulnerable). Two or more degrees leave your opponent bound (defenseless, immobile, and impaired). You can attempt to improve an existing hold with another grab action on a following turn. Any resulting degrees of success are cumulative, but if you lose, the target escapes.\nYou are hindered and vulnerable while grabbing and holding an opponent. You can maintain a successful grab as a free action each turn, but cannot perform other actions requiring the use of your grabbing limb(s) while doing so. Since maintaining a grab is a free action, you can take a standard action to inflict your Strength damage to a grabbed target on subsequent turns after the grab is established.\nYou can drag a restrained or bound target along with you when you move. The target gets a Strength resistance check against your Strength. If it fails, you move and the target moves along with you. If the target resists, you are immobilized that turn unless you release your hold on the target.\nYou can end a grab (releasing your target) as a free action. If you are unable to take the free action maintain the hold, the target is automatically released. A target can attempt to escape from a grab as a move action (see Escape)."
         },
         "move":{
             "name":"Move",
             "attack":"-",
             "defense":"-",
             "type":"Move",
-            "quick":"",
-            "full":""
+            "quick":"Move one of your speeds.",
+            "full":"You can move up to your normal speed rank in any movement mode available to you as a move action. Normally this is rank 0 ground speed for most people (up to 30 feet). If you choose to move twice on your turn (taking two move actions) then you move your speed rank each time. You can make a DC 15 Athletics check as a free action to run faster: one or more degree of success increases your ground speed rank by +1 for one round."
         },
         "ready":{
             "name":"Ready",
             "attack":"-",
             "defense":"-",
             "type":"Standard",
-            "quick":"",
-            "full":""
+            "quick":"Ready an action in advance.",
+            "full":"Readying lets you prepare to take an action later, after you would normally act on your initiative, but before your initiative on your next turn. Readying is a standard action, so you can move as well.\n You can ready a single standard, move, or free action. To do so, specify the action you will take and the circumstances under which you will take it. Then, any time before your next turn, you may take the readied action as a reaction to those circumstances. Your place in the initiative order then becomes the point where you took your readied action.\nIf you come to your next turn and have not yet performed your readied action, you don’t get to take the readied action, you just lose your previous turn. You can ready the same action again on your next turn, if you wish, continuing to wait for the right circumstances."
         },
         "recover":{
             "name":"Recover",
             "attack":"-",
             "defense":"+2",
             "type":"Standard",
-            "quick":"",
-            "full":""
+            "quick":"Recover a condition.",
+            "full":"You take your entire turn to try and catch your breath and bounce back a bit. When you recover, you can remove your highest level of damage or fatigue. Alternately, rather than removing a level of damage or fatigue, you can choose to make a resistance check against an ongoing effect, in addition to the normal resistance check at the end of your turn.\nYou can only recover once per conflict. Once you have done so, you must recover from any remaining damage, fatigue, or effects normally (or with outside assistance).\nWhen you recover, you gain +2 to your active defenses until the start of your next turn."
         },
         "smash":{
             "name":"Smash",
             "attack":"-",
             "defense":"-",
             "type":"Standard",
-            "quick":"",
-            "full":""
+            "quick":"Attack an object on a target's person.",
+            "full":"You attempt to damage or break an object held or worn by an opponent. Make an attack check against the defense of the character with the object, with a –5 circumstance penalty if you are attacking a held object. If your attack check succeeds, you inflict damage on the object rather than the character. See Damaging objects for details on breaking things."
         },
         "stand":{
             "name":"Stand",
             "attack":"-",
             "defense":"-",
             "type":"Move",
-            "quick":"",
-            "full":""
+            "quick":"Stand from prone.",
+            "full":"You stand up from a prone position. You can go from prone to standing as a free action by making a DC 20 Acrobatics check. Characters with the Instant Up advantage can stand as a free action without a skill check."
         },
         "trip":{
             "name":"Trip",
             "attack":"-2",
             "defense":"-",
             "type":"Standard",
-            "quick":"",
-            "full":""
-        },
+            "quick":"Make an attempt to trip a target.",
+            "full":"You try to trip or throw your opponent to the ground. Make a close attack check against your opponent’s Parry with a –2 circumstance penalty on the check. If the attack succeeds, make an opposed check of your Acrobatics or Athletics against your opponent’s Acrobatics or Athletics. Use whichever has the better bonus in each case.\nIf you win, the defender is prone in an area adjacent to you of your choice. If you lose, the defender immediately gets another opposed check to try and trip you. If it fails, the trip attempt ends."
+        }
     },
     "maneuvers":{
-
+        "accurate":{
+            "name":"Accurate Attack",
+            "attack":"+1/+2",
+            "defense":"-",
+            "quick":"Sacrifice effect for accuracy.",
+            "full":"When you make an attack, you can take a penalty of up to –2 on the effect modifier of the attack and add the same number (up to +2) to your attack bonus. Your effect modifier cannot be reduced below +0 and your attack bonus cannot more than double in this way. The changes are declared before you make the attack check and last until the start of your next turn."
+        },
+        "allout":{
+            "name":"All Out Attack",
+            "attack":"+1/+2",
+            "defense":"-1/-2",
+            "quick":"Sacrifice defense for accuracy",
+            "full":"When you make an attack you can take a penalty of up to –2 on your active defenses (Dodge and Parry) and add the same number (up to +2) to your attack bonus. Your defense bonuses cannot be reduced below +0 and your attack bonus cannot more than double. The changes to attack and defense bonus are declared before you make the attack check and last until the start of your next turn."
+        },
+        "defensive":{
+            "name":"Defensive Attack",
+            "attack":"-",
+            "defense":"+1/+2",
+            "quick":"Sacrifice effect for defense.",
+            "full":"When you make an attack you can take a penalty of up to –2 on your attack bonus and add the same number (up to +2) to your active defenses (Dodge and Parry). Your attack bonus cannot be reduced below +0 and your defense bonuses cannot more than double. The changes to attack and defense bonus last until the start of your next turn. This maneuver does not apply to effects requiring no attack check or allowing no resistance check."
+        },
+        "demoralize":{
+            "name":"Demoralize",
+            "attack":"-",
+            "defense":"-",
+            "quick":"Shake a target's confidence.",
+            "full":"You can use Intimidation in combat as a standard action to undermine an opponent’s confidence. Make an Intimidation check as a standard action opposed by the better of your target’s Insight or Will defense. If your Intimidation check succeeds, your target is impaired (a –2 circumstance penalty on checks) until the end of your next round. With four or more degrees of success, the target is disabled (a –5 penalty) until the end of your next round."
+        },
+        "feint":{
+            "name":"Feint",
+            "attack":"-",
+            "defense":"-",
+            "quick":"Try to mislead an opponent.",
+            "full":"You can use Deception as a standard action to mislead an opponent in combat. Make a Deception check as a standard action opposed by the better of your target’s Deception or Insight. If your Deception check succeeds, the target is vulnerable against your next attack, until the end of your next round (see Vulnerable in the Conditions section of The Basics chapter)."
+        },
+        "finishing":{
+            "name":"Finishing Attack",
+            "attack":"-",
+            "defense":"-",
+            "quick":"Attempt to finish off a defenseless opponent.",
+            "full":"When you attack a defenseless target at close range, you can choose to make the attack as a routine check (see Routine Checks in The Basics chapter). This generally means your attack hits automatically, since the target has no defense bonus, and the routine check overcomes the normal difficulty.\nIf you choose to make your attack check normally (against DC 10), then a successful hit is treated as a critical hit, with a +5 circumstance bonus to the attack’s resistance DC. Additionally, if you hit with a damaging attack with intent to kill, and the target’s resistance check has three or more degrees of failure, the target dies immediately."
+        },
+        "power":{
+            "name":"Power Attack",
+            "attack":"-1/-2",
+            "defense":"-",
+            "quick":"Sacrifice accuracy for effect.",
+            "full":"When you make an attack you can take a penalty of up to –2 on your attack bonus and add the same number (up to +2) to the effect bonus of your attack. Your attack bonus cannot be reduced below +0 and the effect bonus cannot more than double. The changes to attack and effect are decided before you make your attack check and last until the start of your next turn. This maneuver does not apply to effects requiring no attack check or allowing no resistance check."
+        },
+        "slam":{
+            "name":"Slam Attack",
+            "attack":"-2",
+            "defense":"-",
+            "quick":"Move twice and make a melee attack then take half that damage.",
+            "full":"When you charge, you can charge right into your target, using your momentum to strengthen your attack, but potentially receiving some damage from the impact yourself. The damage rank for your attack equals your movement speed rank, or your normal damage rank, with a +1 circumstance bonus, whichever is higher. If you move your full speed before you charge, increase your damage by either means by an additional +1 circumstance bonus. The Gamemaster may limit your base slam attack damage (before applying circumstance modifiers) by the series power level.\nYou suffer some of the impact of slamming into a target; make a Toughness resistance check against half the damage rank of your attack (rounded down).\nBonuses to Toughness protect against slam attack damage normally. Immunity to slam damage you inflict is a rank 2 Immunity effect, while Immunity to all slam damage is rank 5 (see immunity in the powers chapter)."
+        },
+        "surprise":{
+            "name":"Surprise Attack",
+            "attack":"-",
+            "defense":"-",
+            "quick":"Make an attack on a surprised target.",
+            "full":"On occasions when your attack catches a target by surprise, the target is vulnerable to your attacks. Surprise attacks occur during the surprise round of a conflict (see Surprise earlier in this chapter) and may also occur as a result of stealth or concealment, allowing you to sneak up on a target. The GM can also grant you a surprise attack for an unusual maneuver that catches the target off-guard, such as an Indirect attack (see the indirect modifier for more)."
+        },
+        "team":{
+            "name":"Team Attack",
+            "attack":"-",
+            "defense":"-",
+            "quick":"Make an attack with allies.",
+            "full":"Multiple attackers can attempt to combine their attacks in order to overwhelm an opponent’s resistance. The attacks to be combined must have the same effect and resistance and be within 5 ranks of each other. So attacks all doing Damage against Toughness can combine, but not with a Mental Blast, for example, which is a Damage effect, but resisted by Will rather than Toughness.\nThe attackers must all delay to the same point in the initiative order (that of the slowest attacker). Each attacker makes an attack check against the target’s defense. Effects not requiring an attack check may be used in a team attack; count the effect as having one degree of success, if it is not the main attack.\nTake the largest effect rank of the attacks that hit and count the combined degrees of success for the other attacks: one degree provides a +2 circumstance bonus to the rank of the main attack, three or more provides a +5 circumstance bonus. Unlike a normal team check, degrees of failure do not reduce success; those attacks simply miss and have no effect. See Team Checks in The Basics chapter for more."
+        }
     },
     "extraEffort":{
-
+        "action":{
+            "name":"Action",
+            "quick":"Take an extra standard action",
+            "full":"Gain an additional standard action during your turn, which can be exchanged for a move or free action, as usual."
+        },
+        "bonus":{
+            "name":"Bonus",
+            "quick":"Get a bonus to a roll.",
+            "full":"Perform one check with a bonus (+2 circumstance bonus) or improve an existing bonus to a major bonus (+5 circumstance bonus). This bonus can also negate a penalty (–2 circumstance penalty), allowing you to perform the check with no modifier, or reduce a major penalty from a –5 penalty to a –2 penalty."
+        },
+        "power":{
+            "name":"Power",
+            "quick":"Boost a power by 1 rank.",
+            "full":"Increase one of your hero’s power effects by +1 rank until the start of the hero’s next turn. Permanent effects cannot be increased in this way."
+        },
+        "powerstunt":{
+            "name":"Power Stunt",
+            "quick":"Create an alternate effect.",
+            "full":"Temporarily gain and use an Alternate Effect (see Alternate Effect in the Powers chapter). The Alternate Effect lasts until the end of the scene or until its duration expires, whichever comes first. Permanent effects cannot be used for power stunts."
+        },
+        "resistance":{
+            "name":"Resistance",
+            "quick":"Make an attempt against an effect.",
+            "full":"Gain an immediate additional resistance check against an ongoing effect. If you’re compelled or controlled, the fatigue from the extra effort doesn’t affect you until you’re free of the effect; this is so you can’t resist yourself to exhaustion as a way of avoiding being controlled!"
+        },
+        "retry":{
+            "name":"Retry",
+            "quick":"Use a power again that you normally couldn't.",
+            "full":"Certain effects (see the Powers chapter) require extra effort to retry after a certain degree of failure. The extra effort merely permits another attempt to use the effect; it grants no other benefits."
+        },
+        "teampowerstunt":{
+            "name":"Team Power Stunt",
+            "quick":"Create a power stunt with your allies.",
+            "full":"At the Gamemaster’s option, it may be possible for characters with compatible power descriptors to combine their efforts to perform a team power stunt, with greater effectiveness than they could have individually. Use the following guidelines for this:\nOne character is the coordinating or lead character. This character makes any checks necessary for the use of the stunt.\nAll of the characters involved must have suitable power effects with compatible descriptors. This is up to the GM to adjudicate using common sense; a team might combine their psionic powers, for example, or a magnetic hero may be able to combine her powers with metallic or electrical characters, but a hodgepodge of powers and descriptors aren’t going to combine without a very good explanation.\nAll of the characters involved in the stunt must use extra effort, taking a level of fatigue after.\nFor each character participating in the team stunt, the team as a whole gets one use of extra effort. The first must go to the power stunt, but others can apply to any other use of extra effort, within reason, and multiple options can stack. Most commonly, additional levels of extra effort go into the power option (+1 power rank per level).\nThe bonuses generated by a team power stunt count as circumstance bonuses, and therefore are unaffected by Power Level. This gives a team power stunt the same potential as a Shared Power Form, previously."
+        },
+        "speed":{
+            "name":"Speed",
+            "quick":"Increase speed for a round.",
+            "full":"Increase the hero’s speed rank by +1 until the start of the hero’s next turn."
+        },
+        "strength":{
+            "name":"Strength",
+            "quick":"Increase strength for a round.",
+            "full":"Increase the hero’s Strength rank by +1 until the start of the hero’s next turn."
+        }
     },
     "heroPoint":{
-
+        "editscene":{
+            "name":"Edit Scene",
+            "quick":"Make an edit to the current scene.",
+            "full":"You can “edit” a scene to grant your hero an advantage by adding or changing certain details. For example, a hero is fighting a villain with plant-based powers in a scientific lab. You deduce the villain may be weakened by defoliants, so you ask the GM if there are any chemicals in the lab you can throw together to create a defoliant. The Gamemaster requires a hero point to add that detail and says the right chemicals are close at hand. Now you just have to use them!\nHow much players are allowed to “edit” circumstances is up to the individual Gamemaster, but generally hero points should not be allowed to change any event that has already occurred or any detail already explained in-game. For example, players cannot “edit” away damage or the effects of powers (hero points already allow this to a limited degree, see the following). The GM may also veto uses of editing that ruin the adventure or make things too easy on the players. This option is intended to give the players more input into the story and allow their heroes chances to succeed, but it shouldn’t be used as a replacement for planning and cleverness, just a way to enhance them."
+        },
+        "heroicfeat":{
+            "name":"Heroic Feat",
+            "quick":"Get an advantage for a round.",
+            "full":"You can spend a hero point to gain the benefits of one rank of a advantage you don’t already have until the end of your next turn (see the Advantages chapter). You must be capable of using the advantage and cannot gain the benefits of fortune advantages, only other types. If the advantage has any prerequisites, you must have them to gain the benefits of the advantage as a heroic feat."
+        },
+        "improveroll":{
+            "name":"Improve Roll",
+            "quick":"Reroll and roll at least 11. Be sure to add hp to the end of the command!",
+            "full":"One hero point allows you to re-roll any die roll you make and take the better of the two rolls. On a result of 1 through 10 on the second roll, add 10 to the result, an 11 or higher remains as-is (so the re-roll is always a result of 11-20). You must spend the hero point to improve a roll before the GM announces the outcome of your initial roll. You cannot spend hero points on die rolls made by the GM or other players without the Luck Control effect (see the Powers chapter)."
+        },
+        "iinspiration":{
+            "name":"Inspiration",
+            "quick":"Get advice from the GM.",
+            "full":"You can spend a hero point to get sudden inspiration in the form of a hint, clue, or bit of help from the GM. It might be a way out of the villain’s fiendish deathtrap, a vital clue for solving a mystery, or an idea about the villain’s weakness. It’s up to the GM exactly how much help the players get from inspiration and how it manifests, but since hero points are a very limited resource, the help should be in some way significant."
+        },
+        "instantcounter":{
+            "name":"Instant Counter",
+            "quick":"Counter an effect being used on you.",
+            "full":"You can spend a hero point to attempt to counter an effect used against you as a reaction. See Countering Effects in the Powers chapter for details."
+        },
+        "recover":{
+            "name":"Recover",
+            "quick":"Recover a condition.",
+            "full":"You can spend a hero point to recover faster. A hero point allows you to immediately remove a dazed, fatigued, or stunned condition, without taking an action. Among other things, this option allows you to use extra effort (previously) without suffering any fatigue. Spending a hero point to recover also lets you convert an exhausted condition into a fatigued condition.You can spend a hero point to recover faster. A hero point allows you to immediately remove a dazed, fatigued, or stunned condition, without taking an action. Among other things, this option allows you to use extra effort (previously) without suffering any fatigue. Spending a hero point to recover also lets you convert an exhausted condition into a fatigued condition."
+        }
     },
-    "teamPowerStunt":{
-
+    "criticalHit":{
+        "increasedeffect":{
+            "name":"Increased Effect",
+            "quick":"Increase the effect by 5.",
+            "full":"The critical hit increases the difficulty to resist the attack’s effect by +5. Against a minion, this bypasses the resistance check entirely; the minion automatically receives the highest degree of the attack’s effect."
+        },
+        "addedeffect":{
+            "name":"Added Effect",
+            "quick":"Add an effect to your effect.",
+            "full":"The critical hit adds another effect onto the attack, but its effective rank is 0, so the resistance DC is just the base value (10, or 15 for Damage). The added effect can be anything the player can reasonably describe and justify as adjunct to the original effect: an Affliction (useful for all sorts of “gut checks,” blows to the head or vitals, etc.), Dazzle (blood in the eyes, boxing the ears, etc.), or Weaken, to name a few. The GM decides if the effect suits the circumstances of the attack. The target makes resistance checks against the attack’s initial and added effects separately."
+        },
+        "altenateeffect":{
+            "name":"Alternate Effect",
+            "quick":"Stunt at no cost.",
+            "full":"The critical hit results in an alternate effect for the attack, like a use of extra effort for a power stunt (see Extra Effort in The Basics chapter), except the character suffers no fatigue as a result. This option can represent a “lucky” attack that does something completely different, like blinding a target, or imposing a condition such as those found under the Affliction effect."
+        }
     }
 }

@@ -16,7 +16,7 @@ function read(args){
 module.exports={
     name:'affliction',
     description:'Make a roll to resist an affliction.',
-    aliases:['aff'],
+    aliases:['a','aff'],
     usage:'(bonus) (DC) (attempts/hp)',
     execute:function(message,args){
         var mes="";
