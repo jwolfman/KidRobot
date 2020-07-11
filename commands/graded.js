@@ -29,7 +29,7 @@ module.exports={
                     mes+=args[c];
                 }
             }
-            if(args[c].indexOf("#")>-1){
+            if(args[c].indexOf("%")>-1){
                 mesStart=true;
                 mes=args[c].substring(1);
             }

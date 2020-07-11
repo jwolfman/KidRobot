@@ -16,7 +16,7 @@ function read(args){
 module.exports={
     name:'gatherInfo',
     description:'Make an investigation roll to find information.',
-    alias:['gather','gatherInformation'],
+    alias:['ga','gather','gatherInformation'],
     usage:'(bonus) (attempts/hp)',
     execute:function(message,args){
         var mes="";
@@ -29,7 +29,7 @@ module.exports={
                     mes+=args[c];
                 }
             }
-            if(args[c].indexOf("#")>-1){
+            if(args[c].indexOf("%")>-1){
                 mesStart=true;
                 mes=args[c].substring(1);
             }

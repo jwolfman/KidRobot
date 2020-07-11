@@ -16,6 +16,7 @@ function read(args){
 module.exports={
     name:'attitude',
     description:'Make a persuasion roll to improve a target\'s attitude towards you.',
+    aliases:['at'],
     usage:'(bonus) (attempts/hp)',
     execute:function(message,args){
         var mes="";
@@ -28,7 +29,7 @@ module.exports={
                     mes+=args[c];
                 }
             }
-            if(args[c].indexOf("#")>-1){
+            if(args[c].indexOf("%")>-1){
                 mesStart=true;
                 mes=args[c].substring(1);
             }

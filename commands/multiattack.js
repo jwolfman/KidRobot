@@ -16,7 +16,7 @@ function read(args){
 module.exports={
     name:'multiattack',
     description:'Make a roll for a multiattack check against a set DC',
-    aliases:['mult','multi'],
+    aliases:['m','mult','multi'],
     usage:'(bonus) (rank) (attempts/hp)',
     execute:function(message,args){
         var mes="";
@@ -29,7 +29,7 @@ module.exports={
                     mes+=args[c];
                 }
             }
-            if(args[c].indexOf("#")>-1){
+            if(args[c].indexOf("%")>-1){
                 mesStart=true;
                 mes=args[c].substring(1);
             }
