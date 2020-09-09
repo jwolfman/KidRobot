@@ -132,6 +132,7 @@ module.exports={
                 mes+="\nshe or her or she/her";
                 mes+="\nthey or them or they/them";
                 mes+="\nother";
+                return message.channel.send(mes);
             default: return message.channel.send(message.author+", that role cannot be manually assigned or does not exist.");
         }
         return message.channel.send(message.author+", oops! Something went really wrong.");
