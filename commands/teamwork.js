@@ -16,7 +16,7 @@ function read(args){
 module.exports={
     name:'teamwork',
     description:'Make a roll to aid another via a teamwork check.',
-    aliases:['team'],
+    aliases:['team', 'te'],
     usage:'(bonus) (attempts/hp)',
     execute:function(message,args){
         var mes="";

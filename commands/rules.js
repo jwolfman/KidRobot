@@ -26,7 +26,7 @@ module.exports={
                     if(args.length>1){
                         input="";
                         for(var c in args){
-                            if(c>0){
+                            if(c>1){
                                 input+=args[c].toLowerCase();
                             }
                         }
@@ -51,7 +51,7 @@ module.exports={
                     if(args.length>1){
                         input="";
                         for(var c in args){
-                            if(c>0&&args[c].toLowerCase()!="attack"){
+                            if(c>1&&args[c].toLowerCase()!="attack"){
                                 input+=args[c].toLowerCase();
                             }
                         }
@@ -75,7 +75,7 @@ module.exports={
                     if((args.length>1&&args[1].toLowerCase()!="effort")||args.length>2){
                         input="";
                         for(var c in args){
-                            if(c>0&&args[c].toLowerCase()!="effort"){
+                            if(c>1&&args[c].toLowerCase()!="effort"){
                                 input+=args[c].toLowerCase();
                             }
                         }
@@ -100,7 +100,7 @@ module.exports={
                     if((args.length>1&&args[1].toLowerCase()!="point")||args.length>2){
                         input="";
                         for(var c in args){
-                            if(c>0&&args[c].toLowerCase()!="point"){
+                            if(c>1&&args[c].toLowerCase()!="point"){
                                 input+=args[c].toLowerCase();
                             }
                         }
@@ -121,7 +121,7 @@ module.exports={
                     if((args.length>1&&args[1].toLowerCase()!="hit")||args.length>2){
                         input="";
                         for(var c in args){
-                            if(c>0&&args[c].toLowerCase()!="hit"){
+                            if(c>1&&args[c].toLowerCase()!="hit"){
                                 input+=args[c].toLowerCase();
                             }
                         }

@@ -19,7 +19,7 @@ const Discord=require('discord.js');
 module.exports={
     name:'conditions',
     description:'Get information on conditions.',
-    aliases:['cond','condition'],
+    aliases:['cond','condition','co'],
     usage:'(condition)',
     execute:function(message,args) {
         const embed=new Discord.RichEmbed();
