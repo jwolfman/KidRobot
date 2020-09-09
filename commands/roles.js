@@ -37,20 +37,6 @@ module.exports={
     execute:function(message,args){
         var role="";
         var user=message.guild.member(message.author);
-        /*console.log(message.guild.member(message.author)._roles);
-        console.log(message.guild.roles.find('name',"Icon").id);
-        console.log(message.guild.member(message.author)._roles.indexOf(message.guild.roles.find('name',"Icon").id));
-        message.guild.roles.forEach(function(value,key){
-            if(args[0]!=undefined&&value.name.toLowerCase()==args[0].toLowerCase()){
-                role=key;
-            }
-        });
-        if(role==""){
-            return message.channel.send("That role does not exist.");
-        }
-        /*message.author.roles.forEach(function(value,key){
-            console.log(value);
-        });*/
         var response=message.author;
         if(args.length==0){
             return message.channel.send(message.author+", you need to specify a role.");
@@ -136,6 +122,16 @@ module.exports={
                     return message.channel.send(message.author+", role removed");
                 }
                 break;
+            case "list":
+                var mes=message.author;
+                mes+="\n```";
+                mes+="\nvanguard";
+                mes+="\nsentinel or sentinels";
+                mes+="\nromance or romantic or date or dating";
+                mes+="\nhe or him or he/him";
+                mes+="\nshe or her or she/her";
+                mes+="\nthey or them or they/them";
+                mes+="\nother";
             default: return message.channel.send(message.author+", that role cannot be manually assigned or does not exist.");
         }
         return message.channel.send(message.author+", oops! Something went really wrong.");
