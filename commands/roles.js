@@ -29,17 +29,17 @@ var romLeave=[
     "Friendzoned",
     "It's like with Ines and Castle."
 ];
-var MCJoin={
+var MCJoin=[
     "And my pickaxe!",
     "Casual gaming!",
     "Do you want to join my server?",
     "Hang out with your friends online!",
     "Brothers of the mine rejoice!"
-};
-var MCLeave={
+];
+var MCLeave=[
     "*Hissssss*",
     "*Bones rattle*"
-};
+];
 module.exports={
     name:'roles',
     description:'Assign a role to yourself aside from On Patrol.',
