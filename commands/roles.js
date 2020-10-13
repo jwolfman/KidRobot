@@ -34,11 +34,11 @@ var MCJoin={
     "Casual gaming!",
     "Do you want to join my server?",
     "Hang out with your friends online!",
-    "Brothers of the mine rejoice!",
+    "Brothers of the mine rejoice!"
 };
 var MCLeave={
     "*Hissssss*",
-    "*Bones rattle*",
+    "*Bones rattle*"
 };
 module.exports={
     name:'roles',
