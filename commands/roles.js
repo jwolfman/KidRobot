@@ -29,6 +29,17 @@ var romLeave=[
     "Friendzoned",
     "It's like with Ines and Castle."
 ];
+var MCJoin={
+    "And my pickaxe!",
+    "Casual gaming!",
+    "Do you want to join my server?",
+    "Hang out with your friends online!",
+    "Brothers of the mine rejoice!",
+};
+var MCLeave={
+    "*Hissssss*",
+    "*Bones rattle*",
+};
 module.exports={
     name:'roles',
     description:'Assign a role to yourself aside from On Patrol.',
@@ -74,6 +85,17 @@ module.exports={
                 }else{
                     user.removeRole(role);
                     return message.channel.send(message.author+" "+romLeave[Math.floor(Math.random()*leave.length)]);
+                }
+                break;
+            case "mc":
+            case "miner":
+                role=message.guild.roles.find('name',"Miner").id;
+                if(user._roles.indexOf(role)==-1) {
+                    user.addRole(role);
+                    return message.channel.send(message.author+" "+MCJoin[Math.floor(Math.random()*join.length)]);
+                }else{
+                    user.removeRole(role);
+                    return message.channel.send(message.author+" "+MCLeave[Math.floor(Math.random()*leave.length)]);
                 }
                 break;
             case "he":
@@ -128,6 +150,7 @@ module.exports={
                 mes+="\nvanguard";
                 mes+="\nsentinel or sentinels";
                 mes+="\nromance or romantic or date or dating";
+                mes+="\nmc or miner";
                 mes+="\nhe or him or he/him";
                 mes+="\nshe or her or she/her";
                 mes+="\nthey or them or they/them";
