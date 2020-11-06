@@ -24,7 +24,7 @@ module.exports={
                 console.error('Could not send help DM to '+message.author.tag+'.\n', error);
             message.reply('it seems like I can\'t DM you!');
             });*/
-            const embed = new Discord.RichEmbed();
+            const embed = new Discord.MessageEmbed();
             embed.setTitle("Commands");
             //embed.setAuthor("KidRobot", "kid_robot_by_d_mac_d4gripk.jpg");
                 /*

@@ -15,7 +15,7 @@ module.exports={
     aliases:['rule','ru'],
     usage:'(rules)',
     execute:function(message,args) {
-        const embed=new Discord.RichEmbed();
+        const embed=new Discord.MessageEmbed();
         if(args.length!=0){
             switch(args[0].toLowerCase()){
                 case "a":

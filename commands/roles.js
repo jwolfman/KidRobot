@@ -46,119 +46,121 @@ module.exports={
     aliases:['role'],
     usage:'(role)',
     execute:function(message,args){
-        var role="";
-        var user=message.guild.member(message.author);
-        var response=message.author;
-        if(args.length==0){
-            return message.channel.send(message.author+", you need to specify a role.");
-        }
-        switch(args[0].toLowerCase()){
-            case "vanguard":
-                role=message.guild.roles.find('name',"Vanguard").id;
-                if(user._roles.indexOf(role)==-1) {
-                    user.addRole(role);
-                    return message.channel.send(message.author+join[Math.floor(Math.random()*join.length)]);
-                }else{
-                    user.removeRole(role);
-                    return message.channel.send(message.author+leave[Math.floor(Math.random()*leave.length)]);
-                }
-                break;
-            case "sentinels":
-            case "sentinel":
-                role=message.guild.roles.find('name',"Sentinel").id;
-                if(user._roles.indexOf(role)==-1) {
-                    user.addRole(role);
-                    return message.channel.send(message.author+join[Math.floor(Math.random()*join.length)]);
-                }else{
-                    user.removeRole(role);
-                    return message.channel.send(message.author+leave[Math.floor(Math.random()*leave.length)]);
-                }
-                break;
-            case "romance":
-            case "romantic":
-            case "date":
-            case "dating":
-                role=message.guild.roles.find('name',"Romantic").id;
-                if(user._roles.indexOf(role)==-1) {
-                    user.addRole(role);
-                    return message.channel.send(message.author+" "+romJoin[Math.floor(Math.random()*join.length)]);
-                }else{
-                    user.removeRole(role);
-                    return message.channel.send(message.author+" "+romLeave[Math.floor(Math.random()*leave.length)]);
-                }
-                break;
-            case "mc":
-            case "miner":
-                role=message.guild.roles.find('name',"Miner").id;
-                if(user._roles.indexOf(role)==-1) {
-                    user.addRole(role);
-                    return message.channel.send(message.author+" "+MCJoin[Math.floor(Math.random()*join.length)]);
-                }else{
-                    user.removeRole(role);
-                    return message.channel.send(message.author+" "+MCLeave[Math.floor(Math.random()*leave.length)]);
-                }
-                break;
-            case "he":
-            case "him":
-            case "he/him":
-                role=message.guild.roles.find('name',"He/Him").id;
-                if(user._roles.indexOf(role)==-1) {
-                    user.addRole(role);
-                    return message.channel.send(message.author+", it's a boy!");
-                }else{
-                    user.removeRole(role);
-                    return message.channel.send(message.author+", role removed");
-                }
-                break;
-            case "she":
-            case "her":
-            case "she/her":
-                role=message.guild.roles.find('name',"She/Her").id;
-                if(user._roles.indexOf(role)==-1) {
-                    user.addRole(role);
-                    return message.channel.send(message.author+", it's a girl!");
-                }else{
-                    user.removeRole(role);
-                    return message.channel.send(message.author+", role removed");
-                }
-                break;
-            case "they":
-            case "them":
-            case "they/them":
-                role=message.guild.roles.find('name',"They/Them").id;
-                if(user._roles.indexOf(role)==-1) {
-                    user.addRole(role);
-                    return message.channel.send(message.author+", it's a person!");
-                }else{
-                    user.removeRole(role);
-                    return message.channel.send(message.author+", role removed");
-                }
-                break;
-            case "other":
-                role=message.guild.roles.find('name',"Other").id;
-                if(user._roles.indexOf(role)==-1) {
-                    user.addRole(role);
-                    return message.channel.send(message.author+", it's a person!");
-                }else{
-                    user.removeRole(role);
-                    return message.channel.send(message.author+", role removed");
-                }
-                break;
-            case "list":
-                var mes=message.author;
-                mes+="\n```";
-                mes+="\nvanguard";
-                mes+="\nsentinel or sentinels";
-                mes+="\nromance or romantic or date or dating";
-                mes+="\nmc or miner";
-                mes+="\nhe or him or he/him";
-                mes+="\nshe or her or she/her";
-                mes+="\nthey or them or they/them";
-                mes+="\nother";
-                mes+="\n```";
-                return message.channel.send(mes);
-            default: return message.channel.send(message.author+", that role cannot be manually assigned or does not exist.");
-        }
-        return message.channel.send(message.author+", oops! Something went really wrong.");
+    var role="";
+    var user=message.guild.member(message.author);
+    /*console.log(message.guild.roles.cache.find(r=> r.name=="Miner").id);
+    console.log(message.guild.member(message.author)==message.member);*/
+    var response=message.author.toString();
+    if(args.length==0){
+        response+=", you need to specify a role. Use the following\n";
+        args[0]="list";
     }
+    switch(args[0].toLowerCase()){
+        case "vanguard":
+            role=message.guild.roles.cache.find(r=> r.name=="Vanguard").id;
+            if(!user.roles.cache.has(role.id)) {
+                user.roles.add(role);
+                return message.channel.send(message.author.toString()+join[Math.floor(Math.random()*join.length)]);
+            }else{
+                user.roles.remove(role);
+                return message.channel.send(message.author.toString()+leave[Math.floor(Math.random()*leave.length)]);
+            }
+            break;
+        case "sentinels":
+        case "sentinel":
+            role=message.guild.roles.cache.find(r=> r.name=="Sentinel").id;
+            if(!user.roles.cache.has(role.id)) {
+                user.roles.add(role);
+                return message.channel.send(message.author.toString()+join[Math.floor(Math.random()*join.length)]);
+            }else{
+                user.roles.remove(role);
+                return message.channel.send(message.author.toString()+leave[Math.floor(Math.random()*leave.length)]);
+            }
+            break;
+        case "romance":
+        case "romantic":
+        case "date":
+        case "dating":
+            role=message.guild.roles.cache.find(r=> r.name=="Romantic").id;
+            if(!user.roles.cache.has(role.id)) {
+                user.roles.add(role);
+                return message.channel.send(message.author.toString()+" "+romJoin[Math.floor(Math.random()*join.length)]);
+            }else{
+                user.roles.remove(role);
+                return message.channel.send(message.author.toString()+" "+romLeave[Math.floor(Math.random()*leave.length)]);
+            }
+            break;
+        case "mc":
+        case "miner":
+            role=message.guild.roles.cache.find(r=> r.name=="Miner");
+            if(!user.roles.cache.has(role.id)) {
+                user.roles.add(role);
+                return message.channel.send(message.author.toString()+" "+MCJoin[Math.floor(Math.random()*join.length)]);
+            }else{
+                message.member.roles.remove(role);
+                return message.channel.send(message.author.toString()+" "+MCLeave[Math.floor(Math.random()*leave.length)]);
+            }
+            break;
+        case "he":
+        case "him":
+        case "he/him":
+            role=message.guild.roles.cache.find(r=> r.name=="He/Him").id;
+            if(!user.roles.cache.has(role.id)) {
+                user.roles.add(role);
+                return message.channel.send(message.author.toString()+", it's a boy!");
+            }else{
+                user.roles.remove(role);
+                return message.channel.send(message.author.toString()+", role removed");
+            }
+            break;
+        case "she":
+        case "her":
+        case "she/her":
+            role=message.guild.roles.cache.find(r=> r.name=="She/Her").id;
+            if(!user.roles.cache.has(role.id)) {
+                user.roles.add(role);
+                return message.channel.send(message.author.toString()+", it's a girl!");
+            }else{
+                user.roles.remove(role);
+                return message.channel.send(message.author.toString()+", role removed");
+            }
+            break;
+        case "they":
+        case "them":
+        case "they/them":
+            role=message.guild.roles.cache.find(r=> r.name=="They/Them").id;
+            if(!user.roles.cache.has(role.id)) {
+                user.roles.add(role);
+                return message.channel.send(message.author.toString()+", it's a person!");
+            }else{
+                user.roles.remove(role);
+                return message.channel.send(message.author.toString()+", role removed");
+            }
+            break;
+        case "other":
+            role=message.guild.roles.cache.find(r=> r.name=="Other").id;
+            if(!user.roles.cache.has(role.id)) {
+                user.roles.add(role);
+                return message.channel.send(message.author.toString()+", it's a person!");
+            }else{
+                user.roles.remove(role);
+                return message.channel.send(message.author.toString()+", role removed");
+            }
+            break;
+        case "list":
+            response+="\n```";
+            response+="\nvanguard";
+            response+="\nsentinel or sentinels";
+            response+="\nromance or romantic or date or dating";
+            response+="\nmc or miner";
+            response+="\nhe or him or he/him";
+            response+="\nshe or her or she/her";
+            response+="\nthey or them or they/them";
+            response+="\nother";
+            response+="\n```";
+            return message.channel.send(response);
+        default: return message.channel.send(message.author.toString()+", that role cannot be manually assigned or does not exist.");
+    }
+    return message.channel.send(message.author.toString()+", oops! Something went really wrong.");
+}
 }

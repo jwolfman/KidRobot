@@ -22,7 +22,7 @@ module.exports={
     aliases:['cond','condition','co'],
     usage:'(condition)',
     execute:function(message,args) {
-        const embed=new Discord.RichEmbed();
+        const embed=new Discord.MessageEmbed();
         if(args.length!=0){
             if(basic[args[0].toLowerCase()]||combined[args[0].toLowerCase()]){
                 var cond=basic[args[0].toLowerCase()]||combined[args[0].toLowerCase()];

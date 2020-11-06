@@ -34,7 +34,7 @@ module.exports={
                 mes=args[c].substring(1);
             }
         }
-        var response=message.author;
+        var response=message.author.toString();
         var loops=1;
         var hp=false;
         if(args[1]=="hp"||args[1]=="HP"||args[1]=="hero"||args[1]=="Hero"){

@@ -34,7 +34,7 @@ module.exports={
                 mes=args[c].substring(1);
             }
         }
-        var response=message.author;
+        var response=message.author.toString();
         var loops=read(args[2]);
         var loops=1;
         var hp=false;
