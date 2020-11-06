@@ -56,6 +56,28 @@ module.exports={
         args[0]="list";
     }
     switch(args[0].toLowerCase()){
+        case "duty":
+        case "patrol":
+            role=message.guild.roles.cache.find(r=> r.name=="On Patrol").id;
+            if(!user.roles.cache.has(role.id)) {
+                user.roles.add(role);
+                return message.channel.send(message.author.toString()+join[Math.floor(Math.random()*join.length)]);
+            }else{
+                user.roles.remove(role);
+                return message.channel.send(message.author.toString()+leave[Math.floor(Math.random()*leave.length)]);
+            }
+            break;
+        case "welcome":
+        case "welcoming":
+            role=message.guild.roles.cache.find(r=> r.name=="Welcoming Committee").id;
+            if(!user.roles.cache.has(role.id)) {
+                user.roles.add(role);
+                return message.channel.send(message.author.toString()+join[Math.floor(Math.random()*join.length)]);
+            }else{
+                user.roles.remove(role);
+                return message.channel.send(message.author.toString()+leave[Math.floor(Math.random()*leave.length)]);
+            }
+            break;
         case "vanguard":
             role=message.guild.roles.cache.find(r=> r.name=="Vanguard").id;
             if(!user.roles.cache.has(role.id)) {
@@ -149,8 +171,10 @@ module.exports={
             break;
         case "list":
             response+="\n```";
+            response+="\nduty or patrol or game";
             response+="\nvanguard";
             response+="\nsentinel or sentinels";
+            response+="\nwelcome or welcoming";
             response+="\nromance or romantic or date or dating";
             response+="\nmc or miner";
             response+="\nhe or him or he/him";
