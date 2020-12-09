@@ -53,7 +53,7 @@ module.exports={
         if (!command) {
             return message.reply('that\'s not a valid command!');
         }
-        const embed=new Discord.RichEmbed();
+        const embed=new Discord.MessageEmbed();
         embed.setTitle(command.name);
         embed.setDescription(command.description);
         embed.addField("Aliases",command.aliases.join(', '));
