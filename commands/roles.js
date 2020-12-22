@@ -57,6 +57,7 @@ module.exports={
     }
     switch(args[0].toLowerCase()){
         case "duty":
+        case "game":
         case "patrol":
             role=message.guild.roles.cache.find(r=> r.name=="On Patrol").id;
             if(!user.roles.cache.has(role.id)) {
