@@ -57,7 +57,6 @@ module.exports={
     }
     switch(args[0].toLowerCase()){
         case "duty":
-        case "game":
         case "patrol":
             role=message.guild.roles.cache.find(r=> r.name=="On Patrol").id;
             if(!user.roles.cache.has(role.id)) {
@@ -113,9 +112,9 @@ module.exports={
                 return message.channel.send(message.author.toString()+" "+romLeave[Math.floor(Math.random()*leave.length)]);
             }
             break;
-        case "mc":
-        case "miner":
-            role=message.guild.roles.cache.find(r=> r.name=="Miner");
+        case "game":
+        case "arcade":
+            role=message.guild.roles.cache.find(r=> r.name=="Gamer");
             if(!user.roles.cache.has(role.id)) {
                 user.roles.add(role);
                 return message.channel.send(message.author.toString()+" "+MCJoin[Math.floor(Math.random()*join.length)]);
@@ -172,12 +171,12 @@ module.exports={
             break;
         case "list":
             response+="\n```";
-            response+="\nduty or patrol or game";
+            response+="\nduty or patrol";
             response+="\nvanguard";
             response+="\nsentinel or sentinels";
             response+="\nwelcome or welcoming";
             response+="\nromance or romantic or date or dating";
-            response+="\nmc or miner";
+            response+="\ngame or arcade";
             response+="\nhe or him or he/him";
             response+="\nshe or her or she/her";
             response+="\nthey or them or they/them";
