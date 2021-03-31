@@ -59,7 +59,7 @@ module.exports={
         case "duty":
         case "patrol":
             role=message.guild.roles.cache.find(r=> r.name=="On Patrol").id;
-            if(!user.roles.cache.has(role.id)) {
+            if(!user.roles.cache.has(role)){
                 user.roles.add(role);
                 return message.channel.send(message.author.toString()+join[Math.floor(Math.random()*join.length)]);
             }else{
@@ -70,7 +70,7 @@ module.exports={
         case "welcome":
         case "welcoming":
             role=message.guild.roles.cache.find(r=> r.name=="Welcoming Committee").id;
-            if(!user.roles.cache.has(role.id)) {
+            if(!user.roles.cache.has(role)){
                 user.roles.add(role);
                 return message.channel.send(message.author.toString()+join[Math.floor(Math.random()*join.length)]);
             }else{
@@ -80,7 +80,7 @@ module.exports={
             break;
         case "vanguard":
             role=message.guild.roles.cache.find(r=> r.name=="Vanguard").id;
-            if(!user.roles.cache.has(role.id)) {
+            if(!user.roles.cache.has(role)){
                 user.roles.add(role);
                 return message.channel.send(message.author.toString()+join[Math.floor(Math.random()*join.length)]);
             }else{
@@ -91,7 +91,7 @@ module.exports={
         case "sentinels":
         case "sentinel":
             role=message.guild.roles.cache.find(r=> r.name=="Sentinel").id;
-            if(!user.roles.cache.has(role.id)) {
+            if(!user.roles.cache.has(role)){
                 user.roles.add(role);
                 return message.channel.send(message.author.toString()+join[Math.floor(Math.random()*join.length)]);
             }else{
@@ -104,7 +104,7 @@ module.exports={
         case "date":
         case "dating":
             role=message.guild.roles.cache.find(r=> r.name=="Romantic").id;
-            if(!user.roles.cache.has(role.id)) {
+            if(!user.roles.cache.has(role)){
                 user.roles.add(role);
                 return message.channel.send(message.author.toString()+" "+romJoin[Math.floor(Math.random()*join.length)]);
             }else{
@@ -115,7 +115,7 @@ module.exports={
         case "game":
         case "arcade":
             role=message.guild.roles.cache.find(r=> r.name=="Gamer");
-            if(!user.roles.cache.has(role.id)) {
+            if(!user.roles.cache.has(role)){
                 user.roles.add(role);
                 return message.channel.send(message.author.toString()+" "+MCJoin[Math.floor(Math.random()*join.length)]);
             }else{
@@ -127,7 +127,7 @@ module.exports={
         case "him":
         case "he/him":
             role=message.guild.roles.cache.find(r=> r.name=="He/Him").id;
-            if(!user.roles.cache.has(role.id)) {
+            if(!user.roles.cache.has(role)){
                 user.roles.add(role);
                 return message.channel.send(message.author.toString()+", it's a boy!");
             }else{
@@ -139,7 +139,7 @@ module.exports={
         case "her":
         case "she/her":
             role=message.guild.roles.cache.find(r=> r.name=="She/Her").id;
-            if(!user.roles.cache.has(role.id)) {
+            if(!user.roles.cache.has(role)){
                 user.roles.add(role);
                 return message.channel.send(message.author.toString()+", it's a girl!");
             }else{
@@ -151,7 +151,7 @@ module.exports={
         case "them":
         case "they/them":
             role=message.guild.roles.cache.find(r=> r.name=="They/Them").id;
-            if(!user.roles.cache.has(role.id)) {
+            if(!user.roles.cache.has(role)){
                 user.roles.add(role);
                 return message.channel.send(message.author.toString()+", it's a person!");
             }else{
@@ -161,7 +161,7 @@ module.exports={
             break;
         case "other":
             role=message.guild.roles.cache.find(r=> r.name=="Other").id;
-            if(!user.roles.cache.has(role.id)) {
+            if(!user.roles.cache.has(role)){
                 user.roles.add(role);
                 return message.channel.send(message.author.toString()+", it's a person!");
             }else{
