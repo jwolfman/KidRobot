@@ -16,7 +16,7 @@ function read(args){
 module.exports={
     name:'treat',
     description:'Make a treatment roll to give a bonus to rolls against disease and poison.',
-    alias: ['treatment','tr'],
+    aliases: ['treatment','tr'],
     usage:'(bonus), (attempts/hp)',
     execute:function(message,args){
         var mes="";
