@@ -17,10 +17,11 @@ module.exports={
     name:'multiattack',
     description:'Make a roll for a multiattack check against a set DC',
     aliases:['m','mult','multi'],
-    usage:'(bonus) (rank) (attempts/hp)',
+    usage:'(bonus) (rank) (attempts/hp/sa)',
     execute:function(message,args){
         var mes="";
         var mesStart=false;
+        var argEnd=args.length;
         for(var c=0;c<args.length;c++){
             if(mesStart){
                 if(mes.length>0) {
@@ -32,16 +33,22 @@ module.exports={
             if(args[c].indexOf("%")>-1){
                 mesStart=true;
                 mes=args[c].substring(1);
+                argEnd=c;
             }
         }
         var response=message.author.toString();
         var loops=read(args[2]);
         var loops=1;
         var hp=false;
-        if(args[2]=="hp"||args[2]=="HP"||args[2]=="hero"||args[2]=="Hero"){
-            hp=true;
-        }else{
-            loops=read(args[2]);
+        var sa=false;
+        for(var c=2;c<argEnd;c++) {
+            if (args[c].toLowerCase() == "hp" || args[c].toLowerCase() == "hero") {
+                hp = true;
+            }else if (args[c].toLowerCase()=="sa"||args[c].toLowerCase()=="skill"){
+                sa=true;
+            } else {
+                loops = read(args[c]);
+            }
         }
         if(loops==0){
             loops++;
@@ -57,8 +64,13 @@ module.exports={
             if (crit) {
                 response += " to crit";
             }
+            if(sa&&roll<5){
+                roll=5;
+                response+= " boosted by Skill Adept to 5";
+            }
             if (hp&&roll < 11) {
                 roll += 10;
+                response+=" increased by a Hero Point to "+roll;
             }
             var bonus = read(args[0]);
             response += " with a bonus of " + bonus;

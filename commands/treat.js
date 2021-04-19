@@ -17,10 +17,11 @@ module.exports={
     name:'treat',
     description:'Make a treatment roll to give a bonus to rolls against disease and poison.',
     aliases: ['treatment','tr'],
-    usage:'(bonus), (attempts/hp)',
+    usage:'(bonus), (attempts/hp/sa)',
     execute:function(message,args){
         var mes="";
         var mesStart=false;
+        var argEnd=args.length;
         for(var c=0;c<args.length;c++){
             if(mesStart){
                 if(mes.length>0) {
@@ -32,15 +33,21 @@ module.exports={
             if(args[c].indexOf("%")>-1){
                 mesStart=true;
                 mes=args[c].substring(1);
+                argEnd=c;
             }
         }
         var response=message.author.toString();
         var loops=1;
         var hp=false;
-        if(args[1]=="hp"||args[1]=="HP"||args[1]=="hero"||args[1]=="Hero"){
-            hp=true;
-        }else{
-            loops=read(args[1]);
+        var sa=false;
+        for(var c=1;c<argEnd;c++) {
+            if (args[c].toLowerCase() == "hp" || args[c].toLowerCase() == "hero") {
+                hp = true;
+            }else if (args[c].toLowerCase()=="sa"||args[c].toLowerCase()=="skill"){
+                sa=true;
+            } else {
+                loops = read(args[c]);
+            }
         }
         if(loops==0){
             loops++;
@@ -56,8 +63,13 @@ module.exports={
             if (crit) {
                 response += " to crit";
             }
+            if(sa&&roll<5){
+                roll=5;
+                response+= " boosted by Skill Adept to 5";
+            }
             if (hp&&roll < 11) {
                 roll += 10;
+                response+=" increased by a Hero Point to "+roll;
             }
             var bonus = read(args[0]);
             response += " with a bonus of " + bonus;
