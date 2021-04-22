@@ -67,7 +67,7 @@ module.exports={
                 roll=5;
                 response+= " boosted by Skill Adept to 5";
             }
-            if (hp&&roll < 11) {
+            if (roll < 11) {
                 roll += 10;
                 response+=" increased to "+roll;
             }
