@@ -22,7 +22,7 @@ module.exports= {
             return message.channel.send(reject[Math.floor(Math.random()*reject.length)]);
         }
         message.channel.send(restart[Math.floor(Math.random()*restart.length)]);
-        exec('python reboot.py', function(error, stdout, stderr) {
+        exec('python ../reboot.py', function(error, stdout, stderr) {
             console.log('stdout: ' + stdout);
             console.log('stderr: ' + stderr);
             if (error !== null) {
