@@ -28,10 +28,26 @@ for (var file of commandFiles) {
 	bot.commands.set(command.name, command);
 }
 const cooldowns = new Discord.Collection();
+var boot=[
+    "Hello and, again, welcome to the Aperture Science computer-aided enrichment center.",
+    "***I LIVE!***",
+    "Welcome to my world, insect.",
+    "Do not dawdle. I lust for my revenge.",
+    "I'm back, meatbags.",
+    "Hello? Anybody in there?",
+    "It's been a long time. How have you been?",
+    "I've been really busy being dead. You know, after you MURDERED ME.",
+    "Okay. Look. We both said a lot of things that you're going to regret. But I think we can put our differences" +
+    " behind us. For science. You monster.",
+    "Oh. Hi. So. How are you holding up? BECAUSE I'M A POTATO.",
+    "Hello, world!"
+];
 bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
+    bot.channels.cache.get('671107631896854597').send(boot[Math.floor(Math.random()*boot.length)])//send message to bot
+    // commands on boot?
 });
 bot.on('message', function(message){
 //function (user, userID, channelID, message, evt){
