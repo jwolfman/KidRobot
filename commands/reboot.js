@@ -22,14 +22,7 @@ module.exports= {
             return message.channel.send(reject[Math.floor(Math.random()*reject.length)]);
         }
         message.channel.send(restart[Math.floor(Math.random()*restart.length)]);
-        exec('ls', function(error, stdout, stderr) {
-            message.channel.send('stdout: ' + stdout);
-            message.channel.send('stderr: ' + stderr);
-            if (error !== null) {
-                message.channel.send('exec error: ' + error);
-            }
-        });
-        exec('sudo python reboot.py', function(error, stdout, stderr) {
+        exec('sudo python /home/pi/KidRobot/reboot.py', function(error, stdout, stderr) {
             message.channel.send('stdout: ' + stdout);
             message.channel.send('stderr: ' + stderr);
             if (error !== null) {
