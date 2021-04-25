@@ -46,7 +46,8 @@ bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
-    bot.channels.cache.get('671107631896854597').send(boot[Math.floor(Math.random()*boot.length)])//send message to bot
+    bot.channels.cache.get('671107631896854597').send("@Icon "+boot[Math.floor(Math.random()*boot.length)])//send
+    // message to bot
     // commands on boot?
 });
 bot.on('message', function(message){
