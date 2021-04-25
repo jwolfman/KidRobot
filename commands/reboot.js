@@ -22,11 +22,11 @@ module.exports= {
             return message.channel.send(reject[Math.floor(Math.random()*reject.length)]);
         }
         message.channel.send(restart[Math.floor(Math.random()*restart.length)]);
-        exec('sudo python ../reboot.py', function(error, stdout, stderr) {
-            console.log('stdout: ' + stdout);
-            console.log('stderr: ' + stderr);
+        exec('sudo python reboot.py', function(error, stdout, stderr) {
+            message.channel.send('stdout: ' + stdout);
+            message.channel.send('stderr: ' + stderr);
             if (error !== null) {
-                console.log('exec error: ' + error);
+                message.channel.send('exec error: ' + error);
             }
         });
     }
