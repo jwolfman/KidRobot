@@ -113,6 +113,7 @@ module.exports={
                 }
                 break;
             case "game":
+            case "gamer":
             case "arcade":
                 role=message.guild.roles.cache.find(r=> r.name=="Gamer");
                 if(!user.roles.cache.has(role)){

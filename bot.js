@@ -40,7 +40,8 @@ var boot=[
     "Okay. Look. We both said a lot of things that you're going to regret. But I think we can put our differences" +
     " behind us. For science. You monster.",
     "Oh. Hi. So. How are you holding up? BECAUSE I'M A POTATO.",
-    "Hello, world!"
+    "Hello, world!",
+    "Have fun killing me? Good! **Now it’s my turn.**"
 ];
 bot.on('ready', function (evt) {
     logger.info('Connected');
