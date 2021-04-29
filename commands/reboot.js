@@ -23,10 +23,10 @@ module.exports= {
         }
         message.channel.send(restart[Math.floor(Math.random()*restart.length)]);
         exec('sudo python /home/pi/KidRobot/reboot.py', function(error, stdout, stderr) {
-            if(stdout=="") {
+            if(stdout!=null) {
                 message.channel.send('stdout: ' + stdout);
             }
-            if(stderr=="") {
+            if(stderr!=null) {
                 message.channel.send('stderr: ' + stderr);
             }
             if (error !== null) {
