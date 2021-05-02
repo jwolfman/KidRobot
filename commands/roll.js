@@ -17,7 +17,7 @@ module.exports={
     name:'roll',
     description:'Make a roll.',
     aliases:['r'],
-    usage:'(bonus) (attempts/hp/sa)',
+    usage:'(bonus) (attempts/hp/sa/c#)',
     execute:function(message,args){
         var mes="";
         var mesStart=false;

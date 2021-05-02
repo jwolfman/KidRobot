@@ -17,7 +17,7 @@ module.exports={
     name:'multiattack',
     description:'Make a roll for a multiattack check against a set DC',
     aliases:['m','mult','multi'],
-    usage:'(bonus) (rank) (attempts/hp/sa)',
+    usage:'(bonus) (rank) (attempts/hp/sa/c#)',
     execute:function(message,args){
         var mes="";
         var mesStart=false;
