@@ -97,7 +97,7 @@ module.exports={
                 return message.channel.send("First (bonus) argument must be an integer," + message.author + "!");
             }
             response += " for a total of " + (roll + bonus) + "!";
-            if (crit) {
+            if (crit&&roll==20) {
                 response += " That's an effective " + (roll + bonus + 5) + "!";
             }
             if(roll==1){
