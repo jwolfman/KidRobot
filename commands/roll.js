@@ -40,13 +40,33 @@ module.exports={
         var loops=1;
         var hp=false;
         var sa=false;
+        var ic=0;
         for(var c=1;c<argEnd;c++) {
             if (args[c].toLowerCase() == "hp" || args[c].toLowerCase() == "hero") {
                 hp = true;
-            }else if (args[c].toLowerCase()=="sa"||args[c].toLowerCase()=="skill"){
-                sa=true;
+            }else if (args[c].toLowerCase()=="sa"||args[c].toLowerCase()=="skill") {
+                sa = true;
             } else {
-                loops = read(args[c]);
+                switch (args[c].toLowerCase()) {
+                    case "c1":
+                    case "1c":
+                        ic=1;
+                        break;
+                    case "c2":
+                    case "2c":
+                        ic=2;
+                        break;
+                    case "c3":
+                    case "3c":
+                        ic=3;
+                        break;
+                    case "c4":
+                    case "4c":
+                        ic=4;
+                        break;
+                    default:
+                        loops = read(args[c]);
+                }
             }
         }
         if(loops==0){
@@ -58,7 +78,7 @@ module.exports={
                 response+=mes+"=";
             }
             var roll = Math.floor(Math.random() * 20 + 1);
-            var crit = (roll == 20);
+            var crit = (roll >= 20-ic);
             response += "Rolled " + roll;
             if (crit) {
                 response += " to crit";
