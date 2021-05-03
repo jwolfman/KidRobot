@@ -39,7 +39,7 @@ function splitDice(args){
 module.exports={
     name:'otherdie',
     description:'Make a roll of a non-d20.',
-    aliases:['o','die','other'],
+    aliases:['o','other'],
     usage:'(type) (bonus) (attempts)',
     execute:function(message,args){
         var mes="";

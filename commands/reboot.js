@@ -5,7 +5,7 @@ var exec=require('child_process').exec;
 module.exports= {
     name: 'reboot',
     description: 'Reset the bot for an Icon.',
-    aliases: ['reset','restart','fuckYou'],
+    aliases: ['reset','restart','fuckYou','fuckOff','die'],
     usage: '',
     execute:function(message,args) {
         var user=message.guild.member(message.author);
