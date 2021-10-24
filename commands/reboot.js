@@ -6,7 +6,7 @@ module.exports= {
     name: 'reboot',
     description: 'Reset the bot for an Icon.',
     aliases: ['reset','restart','fuckYou','fuckOff','die'],
-    usage: '',
+    usage: 'N/A',
     execute:function(message,args) {
         var user=message.guild.member(message.author);
         var icon=message.guild.roles.cache.find(r=> r.name=="Icon").id;
