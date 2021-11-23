@@ -106,10 +106,10 @@ module.exports={
                 role=message.guild.roles.cache.find(r=> r.name=="Romantic").id;
                 if(!user.roles.cache.has(role)){
                     user.roles.add(role);
-                    return message.channel.send(message.author.toString()+" "+romJoin[Math.floor(Math.random()*join.length)]);
+                    return message.channel.send(message.author.toString()+" "+romJoin[Math.floor(Math.random()*romJoin.length)]);
                 }else{
                     user.roles.remove(role);
-                    return message.channel.send(message.author.toString()+" "+romLeave[Math.floor(Math.random()*leave.length)]);
+                    return message.channel.send(message.author.toString()+" "+romLeave[Math.floor(Math.random()*romLeave.length)]);
                 }
                 break;
             case "game":
