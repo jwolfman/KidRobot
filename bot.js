@@ -57,7 +57,9 @@ bot.on('message', function(message){
         var args = message.content.slice(prefix.length).split(/ +/);
         const commandName = args.shift();
         const command = bot.commands.get(commandName)
-            || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+            || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
+            ||bot.commands.get(commandName.toLowerCase())
+            || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName.toLowerCase()));
         if(!command) return;
         if (command.args && !args.length) {
             let reply = 'You didn\'t provide any arguments, ${message.author}!';
