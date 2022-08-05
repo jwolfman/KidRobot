@@ -125,6 +125,9 @@ module.exports={
                                 input+=args[c].toLowerCase();
                             }
                         }
+                        if(!input.includes("effect")){
+                            input+="effect";
+                        }
                         embed.setTitle(crit[input].name);
                         embed.setDescription(crit[input].quick);
                         embed.addField("Details",crit[input].full);
