@@ -18,7 +18,9 @@ for(var cond in combined){
 const Discord=require('discord.js');
 module.exports={
     name:'conditions',
-    description:'Get information on conditions.',
+    description:'Get information on conditions. If followed by a 1, 2, or 3 then it gives that tier of affliction.' +
+        ' If followed by a condition then it gives information on that condition. Otherwise the command gives a list' +
+        ' of basic and combined conditions.',
     aliases:['cond','condition','co'],
     usage:'(condition)',
     execute:function(message,args) {

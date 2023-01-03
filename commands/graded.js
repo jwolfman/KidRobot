@@ -77,7 +77,7 @@ module.exports={
                 return message.channel.send("First (bonus) argument must be an integer," + message.author + "!");
             }
             var DC = read(args[1]);
-            response += " against a DC of  " + DC + " for ";
+            response += " against a DC of " + DC + " for ";
             if (DC == NaN) {
                 return message.channel.send("Second (effect rank) argument must be an integer," + message.author + "!");
             }
