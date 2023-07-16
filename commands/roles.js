@@ -27,7 +27,6 @@ var romLeave=[
     "Things just didn't work out.",
     "I see you more as a friend.",
     "Friendzoned",
-    "It's like with Ines and Castle."
 ];
 var MCJoin=[
     "And my pickaxe!",
