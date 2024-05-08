@@ -17,7 +17,7 @@ module.exports={
     name:'affliction',
     description:'Make a roll to resist an affliction.',
     aliases:['a','aff'],
-    usage:'(bonus) (DC) (attempts/hp/sa)',
+    usage:'(bonus) (ranks) (attempts/hp/sa)',
     execute:function(message,args){
         var mes="";
         var mesStart=false;

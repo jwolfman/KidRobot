@@ -17,7 +17,7 @@ module.exports={
     name:'weaken',
     description:'Make a roll for a weaken or other difference.',
     aliases:['w','weak','we','difference','dif','diff'],
-    usage:'(bonus) (DC) (attempts/hp/sa/c#)',
+    usage:'(bonus) (ranks) (attempts/hp/sa/c#)',
     execute:function(message,args){
         var mes="";
         var mesStart=false;
@@ -77,7 +77,7 @@ module.exports={
             if (bonus == NaN) {
                 return message.channel.send("First (bonus) argument must be an integer," + message.author + "!");
             }
-            var DC = read(args[1]);
+            var DC = read(args[1])+10;
             response += " against a DC of  " + DC;
             if (DC == NaN) {
                 return message.channel.send("Second (effect rank) argument must be an integer," + message.author + "!");
