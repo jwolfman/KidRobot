@@ -2,6 +2,7 @@
  * Created by joshwolfman on 6/14/19.
  */
 const Discord=require('discord.js');
+const voice=require('@discordjs/voice');
 const auth = require('./auth.json');
 const config=require('./config.json');
 const fs=require('fs');
